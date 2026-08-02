@@ -1205,22 +1205,46 @@ ul {
   color: #ffffff;
 }
 
-/* Floating WhatsApp Button */
+/* Floating Quick Action Buttons */
+.call-float-btn {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  width: 56px;
+  height: 56px;
+  background-color: #0284c7;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
+  z-index: 9999;
+  transition: var(--transition-normal);
+  animation: pulseCall 2s infinite;
+}
+
+.call-float-btn:hover {
+  transform: scale(1.1);
+  background-color: #0369a1;
+}
+
 .whatsapp-float-btn {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 60px;
-  height: 60px;
+  bottom: 25px;
+  right: 25px;
+  width: 56px;
+  height: 56px;
   background-color: var(--whatsapp-green);
   color: #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
-  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
-  z-index: 999;
+  font-size: 1.6rem;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  z-index: 9999;
   transition: var(--transition-normal);
   animation: pulseWhatsApp 2s infinite;
 }
@@ -1230,10 +1254,20 @@ ul {
   background-color: var(--whatsapp-green-hover);
 }
 
+@keyframes pulseCall {
+  0% { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(2, 132, 199, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0); }
+}
+
 @keyframes pulseWhatsApp {
   0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
   70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
   100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.mobile-nav-cta-item {
+  display: none;
 }
 
 /* Modal Popup System */
@@ -1401,6 +1435,25 @@ ul {
 }
 
 @media (max-width: 768px) {
+  /* Header & Navigation Fixes */
+  .nav-cta .phone-call-btn,
+  .nav-cta .open-quote-modal {
+    display: none !important;
+  }
+
+  .mobile-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-sm);
+    color: var(--primary-gold);
+    font-size: 1.3rem;
+  }
+
   .nav-menu {
     position: fixed;
     top: 60px;
@@ -1410,23 +1463,186 @@ ul {
     background: var(--dark-bg);
     flex-direction: column;
     justify-content: flex-start;
-    padding: 40px 20px;
+    padding: 30px 24px;
     transition: var(--transition-normal);
-    gap: 20px;
+    gap: 16px;
   }
 
-  .nav-menu.open {
-    left: 0;
-  }
-
-  .mobile-toggle {
+  .mobile-nav-cta-item {
     display: block;
+    width: 100%;
   }
 
-  .hero-content-box { padding: 22px 18px; }
-  .hero-brand-heading { font-size: 1.8rem; }
-  .hero-subheading { font-size: 1.1rem; }
-  .hero-description { font-size: 0.9rem; }
-  .hero-stats { grid-template-columns: 1fr 1fr; }
-  .partner-container { flex-direction: column; align-items: flex-start; }
+  /* Hero Section Mobile Scaling */
+  .hero-section {
+    min-height: auto;
+    padding-top: 85px;
+    padding-bottom: 30px;
+  }
+
+  .hero-content-box {
+    width: 95%;
+    padding: 24px 16px;
+    border-radius: 14px;
+  }
+
+  .hero-badge {
+    font-size: 0.72rem;
+    padding: 4px 12px;
+    margin-bottom: 10px;
+  }
+
+  .hero-brand-heading {
+    font-size: 1.85rem;
+    letter-spacing: 1px;
+    white-space: normal;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .hero-gst-grey-badge {
+    font-size: 0.78rem;
+    padding: 3px 12px;
+    margin-bottom: 10px;
+  }
+
+  .hero-subheading {
+    font-size: 1.1rem;
+    line-height: 1.35;
+    margin-bottom: 10px;
+  }
+
+  .hero-description {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding-top: 16px;
+  }
+
+  .stat-item {
+    padding: 10px 8px;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+  }
+
+  /* Typography & Section Scaling */
+  .section-title {
+    font-size: 1.65rem;
+    line-height: 1.25;
+  }
+
+  .section-subtitle {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin-bottom: 28px;
+  }
+
+  .partner-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Call-to-Action Box ("Have a project in mind?") */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact-card-box {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px 18px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .contact-card-box h4 {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .contact-card-box p {
+    text-align: center;
+    font-size: 0.88rem;
+  }
+
+  .contact-card-box form .form-control {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Footer Branding & Developer Credit Alignment */
+  .footer-bottom {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    padding: 24px 15px;
+  }
+
+  .footer-bottom p,
+  .developer-credit {
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Floating Action Buttons size on small screens */
+  .call-float-btn {
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+
+  .whatsapp-float-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-brand-heading {
+    font-size: 1.6rem;
+  }
+
+  .hero-subheading {
+    font-size: 1.02rem;
+  }
+
+  .hero-content-box {
+    padding: 20px 14px;
+  }
+
+  .contact-card-box {
+    padding: 20px 14px;
+  }
 }
