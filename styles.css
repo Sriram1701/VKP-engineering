@@ -1473,91 +1473,108 @@ ul {
     width: 100%;
   }
 
-  /* Hero Section Mobile Scaling */
+  /* Hero Section Mobile Scaling & Visual Hierarchy Fix */
   .hero-section {
     min-height: auto;
-    padding-top: 85px;
-    padding-bottom: 30px;
+    padding-top: 80px;
+    padding-bottom: 25px;
   }
 
   .hero-content-box {
     width: 95%;
-    padding: 24px 16px;
+    padding: 22px 14px;
     border-radius: 14px;
   }
 
+  /* Compact Top Badge to prevent competing with main title */
   .hero-badge {
-    font-size: 0.72rem;
-    padding: 4px 12px;
-    margin-bottom: 10px;
+    font-size: 0.68rem;
+    padding: 4px 10px;
+    margin-bottom: 8px;
+    letter-spacing: 0.8px;
+    line-height: 1.25;
+    background: rgba(234, 179, 8, 0.12);
+    border: 1px solid rgba(234, 179, 8, 0.4);
+    max-width: 90%;
   }
 
+  /* Prominent Main Brand Title as Primary Headline */
   .hero-brand-heading {
-    font-size: 1.85rem;
-    letter-spacing: 1px;
+    font-size: 2.3rem;
+    letter-spacing: 1.2px;
     white-space: normal;
-    line-height: 1.2;
+    line-height: 1.15;
     margin-bottom: 8px;
+    font-weight: 900;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
   }
 
   .hero-gst-grey-badge {
-    font-size: 0.78rem;
-    padding: 3px 12px;
-    margin-bottom: 10px;
+    font-size: 0.72rem;
+    padding: 2px 10px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
   }
 
+  /* Balanced Subheading Tagline */
   .hero-subheading {
-    font-size: 1.1rem;
+    font-size: 1.02rem;
+    font-weight: 700;
     line-height: 1.35;
     margin-bottom: 10px;
+    color: #e2e8f0;
   }
 
   .hero-description {
-    font-size: 0.88rem;
-    line-height: 1.5;
-    margin-bottom: 18px;
+    font-size: 0.84rem;
+    line-height: 1.45;
+    color: #cbd5e1;
+    margin-bottom: 16px;
   }
 
   .hero-actions {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     width: 100%;
+    margin-bottom: 18px;
   }
 
   .hero-actions .btn {
     width: 100%;
-    padding: 12px;
-    font-size: 0.9rem;
+    padding: 11px;
+    font-size: 0.88rem;
   }
 
   .hero-stats {
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    padding-top: 16px;
+    gap: 8px;
+    padding-top: 14px;
   }
 
   .stat-item {
-    padding: 10px 8px;
+    padding: 8px 6px;
+    border-radius: 8px;
   }
 
   .stat-number {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
   }
 
   .stat-label {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
+    margin-top: 2px;
   }
 
   /* Typography & Section Scaling */
   .section-title {
-    font-size: 1.65rem;
+    font-size: 1.6rem;
     line-height: 1.25;
   }
 
   .section-subtitle {
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     line-height: 1.5;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
 
   .partner-container {
@@ -1569,25 +1586,25 @@ ul {
   /* Call-to-Action Box ("Have a project in mind?") */
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 25px;
   }
 
   .contact-card-box {
     width: 100%;
     max-width: 100%;
-    padding: 24px 18px;
+    padding: 22px 14px;
     box-sizing: border-box;
     text-align: center;
   }
 
   .contact-card-box h4 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     text-align: center;
   }
 
   .contact-card-box p {
     text-align: center;
-    font-size: 0.88rem;
+    font-size: 0.86rem;
   }
 
   .contact-card-box form .form-control {
@@ -1601,8 +1618,8 @@ ul {
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 12px;
-    padding: 24px 15px;
+    gap: 10px;
+    padding: 20px 15px;
   }
 
   .footer-bottom p,
@@ -1613,36 +1630,42 @@ ul {
 
   /* Floating Action Buttons size on small screens */
   .call-float-btn {
-    bottom: 20px;
-    left: 20px;
-    width: 50px;
-    height: 50px;
-    font-size: 1.25rem;
+    bottom: 16px;
+    left: 16px;
+    width: 48px;
+    height: 48px;
+    font-size: 1.15rem;
   }
 
   .whatsapp-float-btn {
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    font-size: 1.4rem;
+    bottom: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
   }
 }
 
 @media (max-width: 480px) {
   .hero-brand-heading {
-    font-size: 1.6rem;
+    font-size: 2.0rem;
+    line-height: 1.15;
   }
 
   .hero-subheading {
-    font-size: 1.02rem;
+    font-size: 0.96rem;
+  }
+
+  .hero-badge {
+    font-size: 0.65rem;
+    padding: 3px 8px;
   }
 
   .hero-content-box {
-    padding: 20px 14px;
+    padding: 18px 12px;
   }
 
   .contact-card-box {
-    padding: 20px 14px;
+    padding: 18px 12px;
   }
 }
