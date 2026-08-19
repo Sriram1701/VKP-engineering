@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 4. Scroll Counter Animation for Stats
-  const statNumbers = document.querySelectorAll('.stat-number');
+  const statNumbers = document.querySelectorAll('.stat-val');
   let animatedStats = false;
 
   function animateCount(el) {
@@ -137,13 +137,15 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(updateCounter);
   }
 
-  const statsSection = document.querySelector('.hero-stats');
+  const statsSection = document.querySelector('.hero-stats-bar');
   if (statsSection && 'IntersectionObserver' in window) {
     const statsObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting && !animatedStats) {
           animatedStats = true;
-          statNumbers.forEach(stat => animateCount(stat));
+          setTimeout(() => {
+            statNumbers.forEach(stat => animateCount(stat));
+          }, 600);
           statsObserver.unobserve(entry.target);
         }
       });
@@ -175,71 +177,87 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 6. Dynamic Gallery & Lightbox
   const galleryData = {
-    ducting: [
-      { path: "images/ducting/ducting-chimney-system.jpeg", title: "Ducting Chimney System" },
-      { path: "images/ducting/ducting-components.jpg", title: "Ducting Components" },
-      { path: "images/ducting/ducting-pipe-system.webp", title: "Ducting Pipe System" },
-      { path: "images/ducting/funnel-metal-cover.jpeg", title: "Funnel Metal Cover" },
-      { path: "images/ducting/heavy-exhaust-ducting.jpg", title: "Heavy Exhaust Ducting" },
-      { path: "images/ducting/industrial-ducting-pipes.webp", title: "Industrial Ducting Pipes" },
-      { path: "images/ducting/large-white-ducting-cover-2.jpeg", title: "Large White Ducting Cover" },
-      { path: "images/ducting/metal-ducting-cover-1.jpeg", title: "Metal Ducting Cover" },
-      { path: "images/ducting/metal-ducting-cover-2.jpeg", title: "Metal Ducting Cover" },
-      { path: "images/ducting/metal-ducting-cover-3.jpeg", title: "Metal Ducting Cover" },
-      { path: "images/ducting/triangular-ducting-hood-1.jpeg", title: "Triangular Ducting Hood" },
-      { path: "images/ducting/triangular-ducting-hood-2.jpeg", title: "Triangular Ducting Hood" },
-      { path: "images/ducting/triangular-ducting-hood-3.jpeg", title: "Triangular Ducting Hood" }
-    ],
-    tanks: [
-      { path: "images/tanks/heavy-duty-lorry-water-tank.jpeg", title: "Heavy Duty Lorry Water Tank" },
-      { path: "images/tanks/heavy-tank.jpg", title: "Heavy Tank" },
-      { path: "images/tanks/horizontal-cylindrical-tank-1.jpeg", title: "Horizontal Cylindrical Tank" },
-      { path: "images/tanks/horizontal-cylindrical-tank-2.jpeg", title: "Horizontal Cylindrical Tank" },
-      { path: "images/tanks/industrial-vertical-storage-tank.jpeg", title: "Industrial Vertical Storage Tank" },
-      { path: "images/tanks/square-metal-bins-1.jpeg", title: "Square Metal Bins" },
-      { path: "images/tanks/square-metal-bins-2.jpeg", title: "Square Metal Bins" },
-      { path: "images/tanks/ss-horizontal-tank.jpg", title: "SS Horizontal Tank" },
-      { path: "images/tanks/stainless-steel-mixing-tank.jpeg", title: "Stainless Steel Mixing Tank" },
-      { path: "images/tanks/vertical-mixing-tanks.jpeg", title: "Vertical Mixing Tanks" }
-    ],
-    trolleys: [
-      { path: "images/trolleys/blue-trolley-frames-1.jpeg", title: "Blue Trolley Frames" },
-      { path: "images/trolleys/blue-trolley-frames-2.jpeg", title: "Blue Trolley Frames" },
-      { path: "images/trolleys/blue-wheeled-trolley.jpeg", title: "Blue Wheeled Trolley" },
-      { path: "images/trolleys/custom-handling-trolley.jpeg", title: "Custom Handling Trolley" },
-      { path: "images/trolleys/heavy-duty-material-cart.jpeg", title: "Heavy Duty Material Cart" },
-      { path: "images/trolleys/industrial-work-table.jpeg", title: "Industrial Work Table" },
-      { path: "images/trolleys/rolling-laundry-trolley.jpeg", title: "Rolling Laundry Trolley" },
-      { path: "images/trolleys/rolling-material-trolley.jpeg", title: "Rolling Material Trolley" },
-      { path: "images/trolleys/white-wheeled-carts.jpeg", title: "White Wheeled Carts" }
-    ],
     structural: [
-      { path: "images/structural/factory-shed-setup.jpeg", title: "Factory Shed Setup" },
-      { path: "images/structural/flat-metal-structural-base.jpeg", title: "Flat Metal Structural Base" },
+      { path: "images/main-photos/factory-shed-setup.jpeg", title: "Factory Shed Setup", featured: true },
       { path: "images/structural/heavy-industrial-framework.jpeg", title: "Heavy Industrial Framework" },
       { path: "images/structural/on-site-assembly-erection.jpeg", title: "On-Site Assembly Erection" },
       { path: "images/structural/roofing-support-structures.jpeg", title: "Roofing Support Structures" },
       { path: "images/structural/steel-structure-fabrication.jpeg", title: "Steel Structure Fabrication" }
     ],
     machinery: [
+      { path: "images/main-photos/precision-machinery-alignment.jpeg", title: "Precision Machinery Alignment", featured: true },
+      { path: "images/machinery-erection/machinery-setup-1.jpeg", title: "Machinery Setup 1" },
+      { path: "images/machinery-erection/machinery-setup-2.jpeg", title: "Machinery Setup 2" },
+      { path: "images/machinery-erection/machinery-setup-3.jpeg", title: "Machinery Setup 3" },
+      { path: "images/machinery-erection/machinery-setup-4.jpeg", title: "Machinery Setup 4" },
+      { path: "images/machinery-erection/machinery-setup-5.jpeg", title: "Machinery Setup 5" },
+      { path: "images/machinery-erection/machinery-setup-6.jpeg", title: "Machinery Setup 6" },
       { path: "images/machinery-erection/crane-lifting-machinery.jpeg", title: "Crane Lifting Machinery" },
       { path: "images/machinery-erection/heavy-machinery-installation.jpeg", title: "Heavy Machinery Installation" },
-      { path: "images/machinery-erection/industrial-machinery-setup.jpeg", title: "Industrial Machinery Setup" },
-      { path: "images/machinery-erection/machine-assembly-frame.jpeg", title: "Machine Assembly Frame" },
-      { path: "images/machinery-erection/precision-machinery-alignment.jpeg", title: "Precision Machinery Alignment" },
-      { path: "images/machinery-erection/roller-machine-installation.jpeg", title: "Roller Machine Installation" },
-      { path: "images/machinery-erection/tall-ducting-chimneys.jpeg", title: "Tall Ducting Chimneys" }
+      { path: "images/machinery-erection/industrial-machinery-setup.jpeg", title: "Industrial Machinery Setup" }
+    ],
+    ducting: [
+      { path: "images/main-photos/ducting-chimneys.jpeg", title: "Ducting Chimneys", featured: true },
+      { path: "images/main-photos/hood-work.jpeg", title: "Hood Work", featured: true },
+      { path: "images/ducting/cable-tray-install.jpeg", title: "Cable Tray Install" },
+      { path: "images/ducting/ducting-chimney-system.jpeg", title: "Ducting Chimney System" },
+      { path: "images/ducting/ducting-cover-side.jpeg", title: "Ducting Cover Side" },
+      { path: "images/ducting/heavy-exhaust-ducting.jpg", title: "Heavy Exhaust Ducting" },
+      { path: "images/ducting/industrial-ducting-system.jpeg", title: "Industrial Ducting System" },
+      { path: "images/ducting/metal-ducting-cover-2.jpeg", title: "Metal Ducting Cover" },
+      { path: "images/ducting/ss-double-show-box-2.jpeg", title: "SS Double Show Box" },
+      { path: "images/ducting/ss-double-show-box.jpeg", title: "SS Double Show Box" },
+      { path: "images/ducting/triangular-ducting-hood-1.jpeg", title: "Triangular Ducting Hood" }
+    ],
+    tanks: [
+      { path: "images/main-photos/heavy-tank.jpg", title: "Heavy Tank", featured: true },
+      { path: "images/main-photos/softner-tank.jpeg", title: "Softner Tank", featured: true },
+      { path: "images/tanks/boiler-tank.jpeg", title: "Boiler Tank" },
+      { path: "images/tanks/heavy-duty-water-tank.jpeg", title: "Heavy Duty Water Tank" },
+      { path: "images/tanks/horizontal-cylindrical-tank.jpeg", title: "Horizontal Cylindrical Tank" },
+      { path: "images/tanks/industrial-vertical-storage-tank.jpeg", title: "Industrial Vertical Storage Tank" },
+      { path: "images/tanks/ss-horizontal-tank.jpg", title: "SS Horizontal Tank" },
+      { path: "images/tanks/stainless-steel-mixing-tank.jpeg", title: "Stainless Steel Mixing Tank" }
+    ],
+    trolleys: [
+      { path: "images/main-photos/steel-trolley.jpeg", title: "Steel Trolley", featured: true },
+      { path: "images/trolleys/blue-trolley-frames-2.jpeg", title: "Blue Trolley Frames" },
+      { path: "images/trolleys/custom-handling-trolley.jpeg", title: "Custom Handling Trolley" },
+      { path: "images/trolleys/heavy-duty-material-cart.jpeg", title: "Heavy Duty Material Cart" },
+      { path: "images/trolleys/industrial-work-table.jpeg", title: "Industrial Work Table" },
+      { path: "images/trolleys/laundry-box-trolley.jpeg", title: "Laundry Box Trolley" },
+      { path: "images/trolleys/rolling-laundry-trolley.jpeg", title: "Rolling Laundry Trolley" },
+      { path: "images/trolleys/rolling-material-trolley.jpeg", title: "Rolling Material Trolley" }
+    ],
+    ss_ducts: [
+      { path: "images/main-photos/ss-double-show-box.jpeg", title: "SS Double Show Box", featured: true },
+      { path: "images/main-photos/ss-printing-machine-false-ceiling.jpeg", title: "SS Printing Machine False Ceiling", featured: true },
+      { path: "images/main-photos/ss-rolling-machine-false-ceiling.jpeg", title: "SS Rolling Machine False Ceiling", featured: true },
+      { path: "images/SS-duct-works/ducting-chimneys.jpeg", title: "Ducting Chimneys" }
+    ],
+    fans_blowers: [
+      { path: "images/main-photos/axial-flow-fan-belt-driven.jpeg", title: "Axial Flow Fan Belt Driven", featured: true },
+      { path: "images/main-photos/centrifugal-blower-fan.jpeg", title: "Centrifugal Blower Fan", featured: true },
+      { path: "images/blowers/centrifugal-blower-fan-driven-type-coupling-type.jpeg", title: "Centrifugal Blower Coupling Type" },
+      { path: "images/fans/blue-centrifugal-fan.jpeg", title: "Blue Centrifugal Fan" },
+      { path: "images/fans/large-axial-fans.jpeg", title: "Large Axial Fans" },
+      { path: "images/fans/silver-centrifugal-fan.jpeg", title: "Silver Centrifugal Fan" }
+    ],
+    other: [
+      { path: "images/aluminium-work/hood-work.jpeg", title: "Aluminium Hood Work" }
     ]
   };
 
   const categoryLabels = {
-    ducting: "Ducting Systems",
-    tanks: "Tanks & Vessels",
-    trolleys: "Trolleys & Equipment",
     structural: "Structural Erection",
-    machinery: "Machinery Erection"
+    machinery: "Machinery Erection",
+    ducting: "Ducting Systems",
+    tanks: "Tank Vessels",
+    trolleys: "Trolleys & Tables",
+    ss_ducts: "SS Duct Works",
+    fans_blowers: "Fans & Blowers",
+    other: "Other Projects"
   };
-
   const filterBtns = document.querySelectorAll('.filter-btn');
   const dynamicGalleryGrid = document.getElementById('dynamicGalleryGrid');
   
@@ -273,27 +291,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
       
-      let imagesToRender = currentGalleryImages;
+      let imagesToRender = [];
       const viewAllBtn = document.getElementById('viewAllPhotosBtn');
       
       if (filterCategory === 'all' && !window.galleryExpanded) {
-        imagesToRender = currentGalleryImages.slice(0, 8);
-        if (viewAllBtn && currentGalleryImages.length > 8) {
-          viewAllBtn.style.display = 'inline-block';
-        }
+        currentGalleryImages.forEach((item, index) => {
+          if (item.featured) {
+            imagesToRender.push({ item, index });
+          }
+        });
+        if (viewAllBtn) viewAllBtn.style.display = 'inline-block';
       } else {
+        imagesToRender = currentGalleryImages.map((item, idx) => ({ item, index: idx }));
         if (viewAllBtn) viewAllBtn.style.display = 'none';
       }
       
-      imagesToRender.forEach((item, index) => {
+      imagesToRender.forEach((obj) => {
+        const item = obj.item;
+        const index = obj.index;
         const cardHTML = `
-          <div class="gallery-card" data-category="${item.category}" data-index="${index}">
-            <img src="${item.path}" alt="${item.title}" loading="lazy">
-            <div class="gallery-card-overlay">
-              <span class="gallery-card-category">${categoryLabels[item.category] || 'Project'}</span>
-              <div class="gallery-card-title">${item.title}</div>
+          <div class="gallery-item-wrapper">
+            <div class="gallery-card" data-category="${item.category}" data-index="${index}">
+              <img src="${item.path}" alt="${item.title}" loading="lazy">
+              <div class="gallery-card-overlay">
+                <div class="gallery-card-title">${categoryLabels[item.category] || 'Project'}</div>
+              </div>
+              <div class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></div>
             </div>
-            <div class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></div>
+            <div class="gallery-item-label">${item.title}</div>
           </div>
         `;
         dynamicGalleryGrid.insertAdjacentHTML('beforeend', cardHTML);
@@ -570,4 +595,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     resetReviewInterval();
   }
+
+  // 12. Duplicate customer list items for seamless auto-scroll loop
+  const scrollLists = document.querySelectorAll('.customer-scroll-list');
+  scrollLists.forEach(list => {
+    // Duplicate the inner content to allow smooth infinite scrolling
+    const content = list.innerHTML;
+    list.innerHTML = content + content;
+  });
 });
