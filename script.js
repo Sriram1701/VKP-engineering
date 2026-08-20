@@ -230,9 +230,9 @@ document.addEventListener('DOMContentLoaded', () => {
       { path: "images/trolleys/rolling-material-trolley.jpeg", title: "Rolling Material Trolley" }
     ],
     ss_ducts: [
-      { path: "images/main-photos/ss-double-show-box.jpeg", title: "SS Double Show Box", featured: true },
-      { path: "images/main-photos/ss-printing-machine-false-ceiling.jpeg", title: "SS Printing Machine False Ceiling", featured: true },
       { path: "images/main-photos/ss-rolling-machine-false-ceiling.jpeg", title: "SS Rolling Machine False Ceiling", featured: true },
+      { path: "images/main-photos/ss-printing-machine-false-ceiling.jpeg", title: "SS Printing Machine False Ceiling", featured: true },
+      { path: "images/main-photos/ss-double-show-box.jpeg", title: "SS Double Show Box", featured: true },
       { path: "images/SS-duct-works/ducting-chimneys.jpeg", title: "Ducting Chimneys" }
     ],
     fans_blowers: [
@@ -290,6 +290,16 @@ document.addEventListener('DOMContentLoaded', () => {
           });
         }
       });
+      
+      if (filterCategory === 'all') {
+        const idx1 = currentGalleryImages.findIndex(img => img.title === "SS Rolling Machine False Ceiling");
+        const idx2 = currentGalleryImages.findIndex(img => img.title === "Factory Shed Setup");
+        if (idx1 !== -1 && idx2 !== -1) {
+          const temp = currentGalleryImages[idx1];
+          currentGalleryImages[idx1] = currentGalleryImages[idx2];
+          currentGalleryImages[idx2] = temp;
+        }
+      }
       
       let imagesToRender = [];
       const viewAllBtn = document.getElementById('viewAllPhotosBtn');
@@ -517,16 +527,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 11. View Gallery Feature in Structural Card
+  // 11. View Gallery Feature in Core Service Cards
   const viewGalleryBtns = document.querySelectorAll('.view-gallery-btn');
   viewGalleryBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const galleryKey = btn.getAttribute('data-gallery');
-      if (galleryKey && galleryData[galleryKey]) {
-        // Prepare the lightbox images for this specific category
-        currentGalleryImages = galleryData[galleryKey].map(img => ({ ...img, category: galleryKey }));
-        openLightbox(0);
+      if (galleryKey) {
+        // Scroll to the gallery section
+        const gallerySection = document.getElementById('gallery');
+        if (gallerySection) {
+          gallerySection.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Find and click the corresponding filter button
+        const targetFilterBtn = document.querySelector(`.filter-btn[data-filter="${galleryKey}"]`);
+        if (targetFilterBtn) {
+          targetFilterBtn.click();
+        }
       }
     });
   });

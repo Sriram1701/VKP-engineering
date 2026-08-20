@@ -131,6 +131,10 @@ ul {
   margin-bottom: 16px;
 }
 
+.core-services-heading {
+  font-size: 1.75rem;
+}
+
 .section-subtitle {
   font-size: 1.1rem;
   color: var(--text-muted);
@@ -151,7 +155,7 @@ ul {
   font-size: 0.9rem;
   font-weight: 700;
   padding: 10px 20px;
-  border-radius: var(--radius-sm);
+  border-radius: 30px;
   cursor: pointer;
   border: 2px solid transparent;
   transition: var(--transition-fast);
@@ -193,15 +197,15 @@ ul {
 .view-gallery-btn {
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
-  background: #ffffff;
+  background: transparent;
 }
 
 .view-gallery-btn:hover {
-  background: var(--primary-color);
-  color: #000000;
+  background: #ffffff;
+  color: var(--primary-color);
   border-color: var(--primary-color);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 128, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 128, 0.15);
 }
 
 .btn-whatsapp {
@@ -410,7 +414,7 @@ ul {
   justify-content: center;
   min-width: 135px;
   gap: 8px;
-  border-radius: var(--radius-sm);
+  border-radius: 30px;
   white-space: nowrap;
   box-sizing: border-box;
 }
@@ -621,7 +625,8 @@ ul {
   align-items: center;
   gap: 12px;
   font-size: 0.95rem;
-  color: var(--text-dim);
+  color: #000000;
+  font-weight: 700;
 }
 
 .partner-info i {
@@ -708,8 +713,9 @@ ul {
 }
 
 .about-content h2 {
-  font-size: 2.2rem;
-  font-weight: 800;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.4;
   margin-bottom: 20px;
 }
 
@@ -1108,7 +1114,7 @@ ul {
 
 .map-direct-btn:hover {
   background: var(--primary-color);
-  color: var(--dark-bg);
+  color: #ffffff;
 }
 
 .map-embed-wrapper {
@@ -1517,6 +1523,17 @@ ul {
     border-radius: 4px;
   }
 
+  /* Service Feature Mobile Single Line Fix */
+  .service-feature-content {
+    padding: 25px 15px;
+  }
+  .service-feature-content h3 {
+    white-space: normal;
+    font-size: clamp(1.1rem, 6.5vw, 1.6rem);
+    gap: 8px;
+    line-height: 1.3;
+  }
+
   /* Mobile Brand Text Sizing */
   .brand-text .brand-name,
   .brand-text .brand-top {
@@ -1615,9 +1632,10 @@ ul {
     font-size: 0.72rem;
   }
   .about-content h2 {
-  font-size: 2rem;
-  font-weight: 780;
-  margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.4;
   }
   /* Hero Section Mobile Scaling & Visual Hierarchy Fix */
   .hero-section {
@@ -1694,7 +1712,8 @@ ul {
   }
 
   .hero-actions .btn {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     padding: 11px;
     font-size: 0.88rem;
   }
@@ -1706,23 +1725,31 @@ ul {
   }
 
   .stat-item {
-    padding: 8px 6px;
-    border-radius: 8px;
+    padding: 16px 10px;
+    border-radius: 12px;
+    text-align: center;
   }
 
   .stat-number {
-    font-size: 1.35rem;
+    font-size: 1.7rem;
+    display: block;
   }
 
   .stat-label {
-    font-size: 0.72rem;
-    margin-top: 2px;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    display: block;
+    text-align: center;
   }
 
   /* Typography & Section Scaling */
   .section-title {
     font-size: 1.6rem;
     line-height: 1.25;
+  }
+  
+  .core-services-heading {
+    font-size: 1.25rem;
   }
 
   .section-subtitle {
@@ -2231,9 +2258,9 @@ ul {
 }
 @media (max-width: 576px) {
   .hero-content-new {
-    padding-top: 20px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-top: 5px;
+    padding-left: 6%;
+    padding-right: 6%;
   }
   .hero-sub {
     font-size: 0.85rem;
@@ -2242,40 +2269,57 @@ ul {
     color: #ffb703; /* Make it pop */
   }
   .hero-title {
-    font-size: 2.1rem;
-    line-height: 1.15;
-    margin-bottom: 15px;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 25px;
+  }
+  .hero-title .highlight-orange {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: clamp(1.2rem, 7.5vw, 1.8rem);
   }
   .hero-desc {
     font-size: 0.95rem;
     line-height: 1.5;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
     color: #e2e8f0;
   }
   .stats-bar-container {
-    padding: 15px;
+    padding: 16px 12px;
     gap: 10px;
   }
   .stat-box {
     width: 47%;
-    justify-content: flex-start;
-    gap: 8px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 6px;
+    padding: 6px 0;
+  }
+  .stat-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .stat-icon {
     font-size: 1.8rem;
+    margin-bottom: 2px;
   }
   .stat-val {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
   }
   .stat-desc {
-    font-size: 0.65rem;
+    font-size: 0.72rem;
+    margin-top: 2px;
   }
   .hero-buttons-new {
     flex-direction: column;
     gap: 12px;
   }
   .btn-call-now, .btn-whatsapp-new, .btn-gallery-new {
-    width: 100%;
+    width: 85%;
+    margin: 0 auto;
     justify-content: center;
   }
 }
