@@ -179,13 +179,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const galleryData = {
     structural: [
       { path: "images/main-photos/structure-work.jpeg", title: "Structure Work", featured: true },
+      { path: "images/structural/steel-structure-fabrication.jpeg", title: "Steel Structure Fabrication", featured: true },
       { path: "images/structural/heavy-industrial-framework.jpeg", title: "Heavy Industrial Framework" },
       { path: "images/structural/on-site-assembly-erection.jpeg", title: "On-Site Assembly Erection" },
-      { path: "images/structural/roofing-support-structures.jpeg", title: "Roofing Support Structures" },
-      { path: "images/structural/steel-structure-fabrication.jpeg", title: "Steel Structure Fabrication" }
+      { path: "images/structural/roofing-support-structures.jpeg", title: "Roofing Support Structures" }
     ],
     machinery: [
       { path: "images/main-photos/precision-machinery-alignment.jpeg", title: "Precision Machinery Alignment", featured: true },
+      { path: "images/machinery-erection/industrial-machinery-setup.jpeg", title: "Industrial Machinery Setup", featured: true },
       { path: "images/machinery-erection/machinery-setup-1.jpeg", title: "Machinery Setup 1" },
       { path: "images/machinery-erection/machinery-setup-2.jpeg", title: "Machinery Setup 2" },
       { path: "images/machinery-erection/machinery-setup-3.jpeg", title: "Machinery Setup 3" },
@@ -193,17 +194,21 @@ document.addEventListener('DOMContentLoaded', () => {
       { path: "images/machinery-erection/machinery-setup-5.jpeg", title: "Machinery Setup 5" },
       { path: "images/machinery-erection/machinery-setup-6.jpeg", title: "Machinery Setup 6" },
       { path: "images/machinery-erection/crane-lifting-machinery.jpeg", title: "Crane Lifting Machinery" },
-      { path: "images/machinery-erection/heavy-machinery-installation.jpeg", title: "Heavy Machinery Installation" },
-      { path: "images/machinery-erection/industrial-machinery-setup.jpeg", title: "Industrial Machinery Setup" }
+      { path: "images/machinery-erection/heavy-machinery-installation.jpeg", title: "Heavy Machinery Installation" }
     ],
     ducting: [
+      { path: "images/ducting/continuous-plant-ducting-system.jpeg", title: "Continuous Plant Ducting System", featured: true },
+      { path: "images/ducting/industrial-plant-exhaust-ducting.jpeg", title: "Industrial Plant Exhaust Ducting", featured: true },
+      { path: "images/ducting/machine-overhead-ducting-system.jpeg", title: "Machine Overhead Ducting System", featured: true },
+      { path: "images/ducting/textile-machinery-duct-installation.jpeg", title: "Textile Machinery Duct Work", featured: true },
+      { path: "images/ducting/processing-line-ducting-chimneys.jpeg", title: "Processing Line Ducting & Chimneys", featured: true },
+      { path: "images/ducting/factory-chimney-duct-work.jpeg", title: "Factory Chimney Duct Work", featured: true },
       { path: "images/main-photos/ducting-chimneys.jpeg", title: "Ducting Chimneys", featured: true },
       { path: "images/main-photos/hood-work.jpeg", title: "Hood Work", featured: true },
-      { path: "images/ducting/cable-tray-install.jpeg", title: "Cable Tray Install" },
       { path: "images/ducting/ducting-chimney-system.jpeg", title: "Ducting Chimney System" },
+      { path: "images/ducting/industrial-ducting-system.jpeg", title: "Industrial Ducting System" },
       { path: "images/ducting/ducting-cover-side.jpeg", title: "Ducting Cover Side" },
       { path: "images/ducting/heavy-exhaust-ducting.jpg", title: "Heavy Exhaust Ducting" },
-      { path: "images/ducting/industrial-ducting-system.jpeg", title: "Industrial Ducting System" },
       { path: "images/ducting/metal-ducting-cover-2.jpeg", title: "Metal Ducting Cover" },
       { path: "images/ducting/ss-double-show-box-2.jpeg", title: "SS Double Show Box" },
       { path: "images/ducting/ss-double-show-box.jpeg", title: "SS Double Show Box" },
@@ -236,15 +241,20 @@ document.addEventListener('DOMContentLoaded', () => {
       { path: "images/SS-duct-works/ducting-chimneys.jpeg", title: "Ducting Chimneys" }
     ],
     fans_blowers: [
-      { path: "images/main-photos/axial-flow-fan-belt-driven.jpeg", title: "Axial Flow Fan Belt Driven", featured: true },
-      { path: "images/main-photos/centrifugal-blower-fan.jpeg", title: "Centrifugal Blower Fan", featured: true },
+      { path: "images/main-photos/axial-flow-fan-belt-driven.jpeg", title: "Axial Flow Fan Belt Driven" },
+      { path: "images/main-photos/centrifugal-blower-fan.jpeg", title: "Centrifugal Blower Fan" },
       { path: "images/blowers/centrifugal-blower-fan-driven-type-coupling-type.jpeg", title: "Centrifugal Blower Coupling Type" },
       { path: "images/fans/blue-centrifugal-fan.jpeg", title: "Blue Centrifugal Fan" },
       { path: "images/fans/large-axial-fans.jpeg", title: "Large Axial Fans" },
       { path: "images/fans/silver-centrifugal-fan.jpeg", title: "Silver Centrifugal Fan" }
     ],
     other: [
-      { path: "images/aluminium-work/hood-work.jpeg", title: "Aluminium Hood Work" }
+      { path: "images/others/gi-cable-tray-fabrication.jpeg", title: "GI Cable Tray Work", featured: true },
+      { path: "images/others/heavy-duty-cable-tray-work.jpeg", title: "Heavy Duty Cable Tray Work", featured: true },
+      { path: "images/others/cable-tray-install.jpeg", title: "Cable Tray Installation" },
+      { path: "images/aluminium-work/hood-work.jpeg", title: "Aluminium Hood Work" },
+      { path: "images/aluminium-work/aluminium-hood-.jpeg", title: "Aluminium Hood" },
+      { path: "images/aluminium-work/aluminium-hood-cover.jpeg", title: "Aluminium Hood Cover" }
     ]
   };
 
@@ -256,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
     trolleys: "Trolleys & Tables",
     ss_ducts: "SS Duct Works",
     fans_blowers: "Fans & Blowers",
-    other: "Other Projects"
+    other: "Cable Tray & Other Works"
   };
   const filterBtns = document.querySelectorAll('.filter-btn');
   const dynamicGalleryGrid = document.getElementById('dynamicGalleryGrid');
