@@ -1,10 +1,12 @@
 /* ==========================================================================
-   VKP Engineering - Interactive Frontend Script (Enhanced)
+   VKP Engineering - Interactive Frontend Script
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. Hide Preloader smoothly
+  /* ==========================================================================
+     01. PRELOADER
+     ========================================================================== */
   const preloader = document.getElementById('preloader');
   if (preloader) {
     window.addEventListener('load', () => {
@@ -20,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1500);
   }
 
-  // 2. Mobile Menu Toggle
+  /* ==========================================================================
+     02. HEADER & NAVIGATION BAR
+     ========================================================================== */
   const mobileToggle = document.getElementById('mobileToggle');
   const navMenu = document.getElementById('navMenu');
 
@@ -75,8 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Active Navigation Link on Scroll (Throttled)
-  const sections = document.querySelectorAll('section');
+  // Active Navigation Link on Scroll (Throttled via requestAnimationFrame)
+  const sections = document.querySelectorAll('section, header.hero-section');
   const navLinksList = document.querySelectorAll('.nav-link');
 
   let isScrolling = false;
@@ -104,9 +108,11 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       isScrolling = true;
     }
-  });
+  }, { passive: true });
 
-  // 4. Scroll Counter Animation for Stats
+  /* ==========================================================================
+     03. HERO SECTION & BOTTOM STATS BAR
+     ========================================================================== */
   const statNumbers = document.querySelectorAll('.stat-val');
   let animatedStats = false;
 
@@ -159,7 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. Scroll Reveal Observer for Smooth Section Animations
+  /* ==========================================================================
+     04. SCROLL REVEAL OBSERVER
+     ========================================================================== */
   const revealElements = document.querySelectorAll('.reveal-on-scroll');
   if ('IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver((entries) => {
@@ -175,7 +183,31 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => el.classList.add('revealed'));
   }
 
-  // 6. Dynamic Gallery & Lightbox
+  /* ==========================================================================
+     07. FEATURED CORE SERVICES ("View Gallery" Shortcut Handler)
+     ========================================================================== */
+  const viewGalleryBtns = document.querySelectorAll('.view-gallery-btn');
+  viewGalleryBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const galleryKey = btn.getAttribute('data-gallery');
+      if (galleryKey) {
+        const gallerySection = document.getElementById('gallery');
+        if (gallerySection) {
+          gallerySection.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        const targetFilterBtn = document.querySelector(`.filter-btn[data-filter="${galleryKey}"]`);
+        if (targetFilterBtn) {
+          targetFilterBtn.click();
+        }
+      }
+    });
+  });
+
+  /* ==========================================================================
+     08. FILTERABLE WORKS & PRODUCTS GALLERY & LIGHTBOX
+     ========================================================================== */
   const galleryData = {
     structural: [
       { path: "images/main-photos/structure-work.jpeg", title: "Structure Work", featured: true },
@@ -344,12 +376,12 @@ document.addEventListener('DOMContentLoaded', () => {
         dynamicGalleryGrid.insertAdjacentHTML('beforeend', cardHTML);
       });
       
-      // Bind click events for new cards
+      // Bind click events for cards
       document.querySelectorAll('.gallery-card').forEach(card => {
         card.addEventListener('click', function() {
           const idx = parseInt(this.getAttribute('data-index'));
           
-          // Ensure currentGalleryImages matches the grid before opening
+          // Ensure currentGalleryImages matches the active filter
           const activeBtn = document.querySelector('.filter-btn.active');
           if (activeBtn) {
             const filterCategory = activeBtn.getAttribute('data-filter');
@@ -417,14 +449,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Filter Buttons Click Event
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      window.galleryExpanded = false; // Reset expand state on filter change
+      window.galleryExpanded = false;
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       renderGallery(btn.getAttribute('data-filter'));
     });
   });
 
-  // Initial Render
+  // Initial Gallery Render
   window.galleryExpanded = false;
   const initialBtn = document.querySelector('.filter-btn.active');
   renderGallery(initialBtn ? initialBtn.getAttribute('data-filter') : 'all');
@@ -439,7 +471,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Handle Escape key globally for modals
+  // Handle Escape key globally for all modals
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       if (lightboxModal && lightboxModal.classList.contains('active')) {
@@ -452,116 +484,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 8. FAQ Accordion Toggle
-  const faqQuestions = document.querySelectorAll('.faq-question');
-
-  faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-      const faqItem = question.parentElement;
-      const faqAnswer = faqItem.querySelector('.faq-answer');
-
-      document.querySelectorAll('.faq-item').forEach(item => {
-        if (item !== faqItem) {
-          item.classList.remove('active');
-          const ans = item.querySelector('.faq-answer');
-          if (ans) ans.style.maxHeight = null;
-          const qBtn = item.querySelector('.faq-question');
-          if (qBtn) qBtn.setAttribute('aria-expanded', 'false');
-        }
-      });
-
-      faqItem.classList.toggle('active');
-      const isExpanded = faqItem.classList.contains('active');
-      question.setAttribute('aria-expanded', isExpanded);
-      
-      if (isExpanded) {
-        faqAnswer.style.maxHeight = faqAnswer.scrollHeight + 'px';
-      } else {
-        faqAnswer.style.maxHeight = null;
-      }
-    });
+  /* ==========================================================================
+     10. CUSTOMER SATISFACTION & VALUABLE CLIENTS MARQUEE
+     ========================================================================== */
+  const scrollLists = document.querySelectorAll('.customer-scroll-list');
+  scrollLists.forEach(list => {
+    // Duplicate inner content for seamless infinite auto-scroll
+    const content = list.innerHTML;
+    list.innerHTML = content + content;
   });
 
-  // 9. Request Quote Modal & WhatsApp Form Integration
-  const quoteModal = document.getElementById('quoteModal');
-  const openQuoteBtns = document.querySelectorAll('.open-quote-modal');
-  const closeQuoteBtn = document.getElementById('closeQuoteModal');
-  const quoteForm = document.getElementById('quoteForm');
-
-  openQuoteBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const predefinedService = btn.getAttribute('data-service');
-      if (predefinedService && quoteForm) {
-        const selectEl = quoteForm.querySelector('#serviceSelect');
-        if (selectEl) {
-          selectEl.value = predefinedService;
-        }
-      }
-      if (quoteModal) {
-        quoteModal.classList.add('active');
-      }
-    });
-  });
-
-  if (closeQuoteBtn && quoteModal) {
-    closeQuoteBtn.addEventListener('click', () => {
-      quoteModal.classList.remove('active');
-    });
-
-    quoteModal.addEventListener('click', (e) => {
-      if (e.target === quoteModal) {
-        quoteModal.classList.remove('active');
-      }
-    });
-  }
-
-  if (quoteForm) {
-    quoteForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const name = document.getElementById('clientName').value.trim();
-      const phone = document.getElementById('clientPhone').value.trim();
-      const service = document.getElementById('serviceSelect').value;
-      const details = document.getElementById('projectDetails').value.trim();
-
-      const whatsappNumber = '919095007447';
-      const message = `Hello VKP Engineering,%0A%0AI would like to request a quote for:%0A- *Service Required:* ${encodeURIComponent(service)}%0A- *Name:* ${encodeURIComponent(name)}%0A- *Phone:* ${encodeURIComponent(phone)}%0A- *Project Details:* ${encodeURIComponent(details || 'N/A')}`;
-
-      window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
-
-      if (quoteModal) {
-        quoteModal.classList.remove('active');
-      }
-      quoteForm.reset();
-    });
-  }
-
-  // 11. View Gallery Feature in Core Service Cards
-  const viewGalleryBtns = document.querySelectorAll('.view-gallery-btn');
-  viewGalleryBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const galleryKey = btn.getAttribute('data-gallery');
-      if (galleryKey) {
-        // Scroll to the gallery section
-        const gallerySection = document.getElementById('gallery');
-        if (gallerySection) {
-          gallerySection.scrollIntoView({ behavior: 'smooth' });
-        }
-        
-        // Find and click the corresponding filter button
-        const targetFilterBtn = document.querySelector(`.filter-btn[data-filter="${galleryKey}"]`);
-        if (targetFilterBtn) {
-          targetFilterBtn.click();
-        }
-      }
-    });
-  });
-
-});
-
-document.addEventListener('DOMContentLoaded', () => {
+  /* ==========================================================================
+     11. CLIENT REVIEWS & FEEDBACK (GOOGLE REVIEWS SLIDER)
+     ========================================================================== */
   const reviewSlider = document.getElementById('reviewSlider');
   const reviewDotsContainer = document.getElementById('reviewDots');
   
@@ -624,11 +559,118 @@ document.addEventListener('DOMContentLoaded', () => {
     resetReviewInterval();
   }
 
-  // 12. Duplicate customer list items for seamless auto-scroll loop
-  const scrollLists = document.querySelectorAll('.customer-scroll-list');
-  scrollLists.forEach(list => {
-    // Duplicate the inner content to allow smooth infinite scrolling
-    const content = list.innerHTML;
-    list.innerHTML = content + content;
+  /* ==========================================================================
+     12. FREQUENTLY ASKED QUESTIONS (FAQ ACCORDION)
+     ========================================================================== */
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const faqItem = question.parentElement;
+      const faqAnswer = faqItem.querySelector('.faq-answer');
+
+      document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== faqItem) {
+          item.classList.remove('active');
+          const ans = item.querySelector('.faq-answer');
+          if (ans) ans.style.maxHeight = null;
+          const qBtn = item.querySelector('.faq-question');
+          if (qBtn) qBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      faqItem.classList.toggle('active');
+      const isExpanded = faqItem.classList.contains('active');
+      question.setAttribute('aria-expanded', isExpanded);
+      
+      if (isExpanded) {
+        faqAnswer.style.maxHeight = faqAnswer.scrollHeight + 'px';
+      } else {
+        faqAnswer.style.maxHeight = null;
+      }
+    });
   });
+
+  /* ==========================================================================
+     13. FLOATING QUICK ACTION BUTTONS & SCROLL TO TOP
+     ========================================================================== */
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  if (scrollTopBtn) {
+    const checkScrollPosition = () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    };
+
+    window.addEventListener('scroll', checkScrollPosition, { passive: true });
+    checkScrollPosition();
+
+    scrollTopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  /* ==========================================================================
+     14. MODALS (QUOTE REQUEST MODAL & WHATSAPP SUBMISSION)
+     ========================================================================== */
+  const quoteModal = document.getElementById('quoteModal');
+  const openQuoteBtns = document.querySelectorAll('.open-quote-modal');
+  const closeQuoteBtn = document.getElementById('closeQuoteModal');
+  const quoteForm = document.getElementById('quoteForm');
+
+  openQuoteBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const predefinedService = btn.getAttribute('data-service');
+      if (predefinedService && quoteForm) {
+        const selectEl = quoteForm.querySelector('#serviceSelect');
+        if (selectEl) {
+          selectEl.value = predefinedService;
+        }
+      }
+      if (quoteModal) {
+        quoteModal.classList.add('active');
+      }
+    });
+  });
+
+  if (closeQuoteBtn && quoteModal) {
+    closeQuoteBtn.addEventListener('click', () => {
+      quoteModal.classList.remove('active');
+    });
+
+    quoteModal.addEventListener('click', (e) => {
+      if (e.target === quoteModal) {
+        quoteModal.classList.remove('active');
+      }
+    });
+  }
+
+  if (quoteForm) {
+    quoteForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('clientName').value.trim();
+      const phone = document.getElementById('clientPhone').value.trim();
+      const service = document.getElementById('serviceSelect').value;
+      const details = document.getElementById('projectDetails').value.trim();
+
+      const whatsappNumber = '919095007447';
+      const message = `Hello VKP Engineering,%0A%0AI would like to request a quote for:%0A- *Service Required:* ${encodeURIComponent(service)}%0A- *Name:* ${encodeURIComponent(name)}%0A- *Phone:* ${encodeURIComponent(phone)}%0A- *Project Details:* ${encodeURIComponent(details || 'N/A')}`;
+
+      window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+
+      if (quoteModal) {
+        quoteModal.classList.remove('active');
+      }
+      quoteForm.reset();
+    });
+  }
+
 });
