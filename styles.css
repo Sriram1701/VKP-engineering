@@ -899,13 +899,14 @@ ul {
 }
 
 .service-feature-content h3 {
-  font-size: 1.6rem;
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
   font-weight: 800;
   color: var(--dark-bg);
   margin-bottom: 14px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  white-space: nowrap;
 }
 
 .service-feature-content h3 i {
@@ -1624,12 +1625,12 @@ ul {
 
   /* Service Feature Mobile Single Line Fix */
   .service-feature-content {
-    padding: 25px 15px;
+    padding: 22px 14px;
   }
 
   .service-feature-content h3 {
-    white-space: normal;
-    font-size: clamp(1.1rem, 6.5vw, 1.6rem);
+    white-space: nowrap;
+    font-size: clamp(0.98rem, 5.2vw, 1.4rem);
     gap: 8px;
     line-height: 1.3;
   }
