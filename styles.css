@@ -340,6 +340,8 @@ ul {
   flex-direction: column;
   line-height: 1.05;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .brand-text .brand-name,
@@ -349,6 +351,8 @@ ul {
   color: #0e2444;
   letter-spacing: 1.8px;
   line-height: 1;
+  text-align: center;
+  width: 100%;
 }
 
 .brand-text .brand-sub,
@@ -358,6 +362,8 @@ ul {
   color: var(--primary-color);
   letter-spacing: 2.2px;
   line-height: 1.15;
+  text-align: center;
+  width: 100%;
 }
 
 /* Nav Menu Container Capsule */
@@ -1539,9 +1545,13 @@ ul {
     line-height: 1.3;
   }
 
-  /* Mobile Brand Text Sizing - Big & Bold */
+  /* Mobile Brand Text Sizing - Big & Bold & Center Aligned */
   .nav-logo-img {
     height: 46px;
+  }
+  .brand-text {
+    align-items: center;
+    text-align: center;
   }
   .brand-text .brand-name,
   .brand-text .brand-top {
@@ -1550,6 +1560,8 @@ ul {
     color: #0e2444;
     letter-spacing: 1.5px;
     line-height: 1;
+    text-align: center;
+    width: 100%;
   }
   .brand-text .brand-sub,
   .brand-text .brand-bottom {
@@ -1558,6 +1570,8 @@ ul {
     color: var(--primary-color);
     letter-spacing: 2px;
     line-height: 1.15;
+    text-align: center;
+    width: 100%;
   }
 
   /* Header & Navigation Fixes */
