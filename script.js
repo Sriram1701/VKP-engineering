@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 6. Dynamic Gallery & Lightbox
   const galleryData = {
     structural: [
-      { path: "images/main-photos/factory-shed-setup.jpeg", title: "Factory Shed Setup", featured: true },
+      { path: "images/main-photos/structure-work.jpeg", title: "Structure Work", featured: true },
       { path: "images/structural/heavy-industrial-framework.jpeg", title: "Heavy Industrial Framework" },
       { path: "images/structural/on-site-assembly-erection.jpeg", title: "On-Site Assembly Erection" },
       { path: "images/structural/roofing-support-structures.jpeg", title: "Roofing Support Structures" },
@@ -230,8 +230,8 @@ document.addEventListener('DOMContentLoaded', () => {
       { path: "images/trolleys/rolling-material-trolley.jpeg", title: "Rolling Material Trolley" }
     ],
     ss_ducts: [
-      { path: "images/main-photos/ss-rolling-machine-false-ceiling.jpeg", title: "SS Rolling Machine False Ceiling", featured: true },
-      { path: "images/main-photos/ss-printing-machine-false-ceiling.jpeg", title: "SS Printing Machine False Ceiling", featured: true },
+      { path: "images/main-photos/rolling-machine-ss-false-ceiling.jpeg", title: "Rolling Machine SS False Ceiling", featured: true },
+      { path: "images/main-photos/printing-machine-ss-false-ceiling.jpeg", title: "Printing Machine SS False Ceiling", featured: true },
       { path: "images/main-photos/ss-double-show-box.jpeg", title: "SS Double Show Box", featured: true },
       { path: "images/SS-duct-works/ducting-chimneys.jpeg", title: "Ducting Chimneys" }
     ],
@@ -292,8 +292,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       
       if (filterCategory === 'all') {
-        const idx1 = currentGalleryImages.findIndex(img => img.title === "SS Rolling Machine False Ceiling");
-        const idx2 = currentGalleryImages.findIndex(img => img.title === "Factory Shed Setup");
+        const idx1 = currentGalleryImages.findIndex(img => img.title === "Rolling Machine SS False Ceiling");
+        const idx2 = currentGalleryImages.findIndex(img => img.title === "Structure Work");
         if (idx1 !== -1 && idx2 !== -1) {
           const temp = currentGalleryImages[idx1];
           currentGalleryImages[idx1] = currentGalleryImages[idx2];
