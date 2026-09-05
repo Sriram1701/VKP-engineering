@@ -329,7 +329,7 @@ ul {
 }
 
 .nav-logo-img {
-  height: 42px;
+  height: 48px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
@@ -344,20 +344,20 @@ ul {
 
 .brand-text .brand-name,
 .brand-text .brand-top {
-  font-size: 1.7rem;
+  font-size: 1.85rem;
   font-weight: 900;
-  color: #102c57;
-  letter-spacing: 1.5px;
+  color: #0e2444;
+  letter-spacing: 1.8px;
   line-height: 1;
 }
 
 .brand-text .brand-sub,
 .brand-text .brand-bottom {
-  font-size: 1rem;
-  font-weight: 850;
+  font-size: 1.05rem;
+  font-weight: 900;
   color: var(--primary-color);
-  letter-spacing: 2px;
-  line-height: 1.2;
+  letter-spacing: 2.2px;
+  line-height: 1.15;
 }
 
 /* Nav Menu Container Capsule */
@@ -1539,14 +1539,25 @@ ul {
     line-height: 1.3;
   }
 
-  /* Mobile Brand Text Sizing */
+  /* Mobile Brand Text Sizing - Big & Bold */
+  .nav-logo-img {
+    height: 46px;
+  }
   .brand-text .brand-name,
   .brand-text .brand-top {
-    font-size: 1.25rem;
+    font-size: 1.65rem;
+    font-weight: 900;
+    color: #0e2444;
+    letter-spacing: 1.5px;
+    line-height: 1;
   }
   .brand-text .brand-sub,
   .brand-text .brand-bottom {
-    font-size: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 900;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+    line-height: 1.15;
   }
 
   /* Header & Navigation Fixes */
@@ -2292,30 +2303,31 @@ ul {
 }
 @media (max-width: 576px) {
   .hero-content-new {
-    padding-top: 5px;
-    padding-left: 6%;
-    padding-right: 6%;
+    padding-top: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
   }
   .hero-sub {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     letter-spacing: 2px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     color: #ffb703; /* Make it pop */
   }
   .hero-title {
-    font-size: 1.8rem;
-    line-height: 1.2;
-    margin-bottom: 25px;
+    font-size: 1.65rem;
+    line-height: 1.22;
+    margin-bottom: 14px;
   }
   .hero-title .highlight-orange {
     display: inline-block;
     white-space: nowrap;
-    font-size: clamp(1.2rem, 7.5vw, 1.8rem);
+    font-size: clamp(1.2rem, 6.8vw, 1.65rem);
+    margin-top: 2px;
   }
   .hero-desc {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 40px;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 18px;
     color: #e2e8f0;
   }
   .stats-bar-container {
@@ -2348,13 +2360,26 @@ ul {
     margin-top: 2px;
   }
   .hero-buttons-new {
+    display: flex;
     flex-direction: column;
-    gap: 12px;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
   }
   .btn-call-now, .btn-whatsapp-new, .btn-gallery-new, .btn-location-new {
-    width: 85%;
+    width: 100%;
+    height: 42px;
+    padding: 0 16px;
+    font-size: 0.86rem;
+    font-weight: 700;
     margin: 0 auto;
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
 }
 
