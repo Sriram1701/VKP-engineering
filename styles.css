@@ -568,6 +568,39 @@ ul {
   color: #ff6b00;
 }
 
+.hero-brand-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 14px 0 22px 0;
+  max-width: 620px;
+}
+
+.brand-divider-line {
+  flex: 1;
+  height: 2.5px;
+  border-radius: 2px;
+}
+
+.brand-divider-line.line-left {
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 0, 0.4), #ff6b00);
+}
+
+.brand-divider-line.line-right {
+  background: linear-gradient(90deg, #ff6b00, rgba(255, 107, 0, 0.4), transparent);
+}
+
+.brand-divider-text {
+  color: #ffb703;
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-shadow: 0 0 16px rgba(255, 183, 3, 0.5);
+}
+
 .hero-desc {
   color: #cbd5e1;
   font-size: 1.05rem;
@@ -579,6 +612,7 @@ ul {
 .hero-buttons-new {
   display: flex;
   gap: 15px;
+  margin-bottom: 25px;
 }
 
 .btn-call-now {
@@ -635,12 +669,12 @@ ul {
 }
 
 .btn-location-new {
-  background-color: #ea4335;
+  background-color: #ff6b00;
   color: white;
   padding: 12px 24px;
   border-radius: 6px;
   font-weight: 700;
-  border: 2px solid #ea4335;
+  border: 2px solid #ff6b00;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -648,10 +682,15 @@ ul {
 }
 
 .btn-location-new:hover {
-  background-color: #d32f2f;
+  background-color: #e05d00;
   color: white;
   border-color: white;
   transform: translateY(-2px);
+}
+
+/* Hero Showcase Image Card - Hidden on Desktop/Laptop, Shown only on Mobile */
+.hero-showcase-card {
+  display: none;
 }
 
 /* Bottom Stats Bar */
@@ -2278,6 +2317,18 @@ ul {
 }
 
 @media (max-width: 576px) {
+  .hero-section {
+    min-height: auto;
+    padding-top: 80px;
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-container-new {
+    padding-bottom: 0;
+  }
+
   .hero-content-new {
     padding-top: 10px;
     padding-left: 5%;
@@ -2302,6 +2353,21 @@ ul {
     white-space: nowrap;
     font-size: clamp(1.2rem, 6.8vw, 1.65rem);
     margin-top: 2px;
+  }
+
+  .hero-brand-divider {
+    margin: 10px 0 16px 0;
+    gap: 10px;
+  }
+
+  .brand-divider-line {
+    height: 2px;
+  }
+
+  .brand-divider-text {
+    font-size: 1.05rem;
+    font-weight: 900;
+    letter-spacing: 2px;
   }
 
   .hero-desc {
@@ -2347,30 +2413,101 @@ ul {
   }
 
   .hero-buttons-new {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
     width: 100%;
-    max-width: 320px;
+    max-width: 330px;
     margin: 0 auto;
   }
 
-  .btn-call-now,
-  .btn-whatsapp-new,
+  .btn-whatsapp-new {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 45px;
+    padding: 0 18px;
+    font-size: 0.92rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
   .btn-gallery-new,
   .btn-location-new {
     width: 100%;
-    height: 42px;
-    padding: 0 16px;
-    font-size: 0.86rem;
+    height: 38px;
+    padding: 0 10px;
+    font-size: 0.78rem;
     font-weight: 700;
-    margin: 0 auto;
+    letter-spacing: 0.5px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    gap: 6px;
+    margin: 0;
+  }
+
+  .btn-gallery-new i {
+    color: #ffb703;
+  }
+
+  .btn-location-new i {
+    color: #ff6b00;
+  }
+
+  .btn-gallery-new:hover,
+  .btn-location-new:hover {
+    background: rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.35);
+  }
+
+  .hero-showcase-card {
+    display: block;
+    margin: 14px auto 14px auto;
+    max-width: 330px;
+    width: 100%;
+  }
+
+  .showcase-img-wrap {
+    position: relative;
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+    background: rgba(15, 23, 42, 0.85);
+  }
+
+  .hero-showcase-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .hero-stats-bar {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    margin-top: 0;
+    z-index: 4;
   }
 }
 

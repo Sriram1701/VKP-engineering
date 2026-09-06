@@ -211,44 +211,44 @@ document.addEventListener('DOMContentLoaded', () => {
   const galleryData = {
     structural: [
       { path: "images/main-photos/structure-work.jpeg", title: "Structure Work", featured: true },
-      { path: "images/structural/steel-structure-fabrication.jpeg", title: "Steel Structure Fabrication", featured: true },
+      { path: "images/structural/ms-structural-steel-and-ss-gi-duct-fabrication.jpeg", title: "MS Structural Steel & SS/GI Duct Fabrication", featured: true },
       { path: "images/structural/heavy-industrial-framework.jpeg", title: "Heavy Industrial Framework" },
       { path: "images/structural/on-site-assembly-erection.jpeg", title: "On-Site Assembly Erection" },
       { path: "images/structural/roofing-support-structures.jpeg", title: "Roofing Support Structures" }
     ],
     machinery: [
       { path: "images/main-photos/precision-machinery-alignment.jpeg", title: "Precision Machinery Alignment", featured: true },
-      { path: "images/machinery-erection/industrial-machinery-setup.jpeg", title: "Industrial Machinery Setup", featured: true },
-      { path: "images/machinery-erection/machinery-setup-1.jpeg", title: "Machinery Setup 1" },
-      { path: "images/machinery-erection/machinery-setup-2.jpeg", title: "Machinery Setup 2" },
-      { path: "images/machinery-erection/machinery-setup-3.jpeg", title: "Machinery Setup 3" },
-      { path: "images/machinery-erection/machinery-setup-4.jpeg", title: "Machinery Setup 4" },
-      { path: "images/machinery-erection/machinery-setup-5.jpeg", title: "Machinery Setup 5" },
-      { path: "images/machinery-erection/machinery-setup-6.jpeg", title: "Machinery Setup 6" },
+      { path: "images/machinery-erection/machinery-erection-and-electrical-works.jpeg", title: "Machinery Erection & Electrical Works", featured: true },
+      { path: "images/machinery-erection/machinery-erection-works-1.jpeg", title: "Machinery Erection Works 1" },
+      { path: "images/machinery-erection/machinery-erection-works-2.jpeg", title: "Machinery Erection Works 2" },
+      { path: "images/machinery-erection/heavy-machinery-lifting-and-positioning.jpeg", title: "Heavy Machinery Lifting & Positioning" },
+      { path: "images/machinery-erection/machinery-erection-works-3.jpeg", title: "Machinery Erection Works 3" },
+      { path: "images/machinery-erection/machinery-erection-works-4.jpeg", title: "Machinery Erection Works 4" },
+      { path: "images/machinery-erection/machinery-erection-works-5.jpeg", title: "Machinery Erection Works 5" },
       { path: "images/machinery-erection/crane-lifting-machinery.jpeg", title: "Crane Lifting Machinery" },
       { path: "images/machinery-erection/heavy-machinery-installation.jpeg", title: "Heavy Machinery Installation" }
     ],
     ducting: [
-      { path: "images/ducting/continuous-plant-ducting-system.jpeg", title: "Continuous Plant Ducting System", featured: true },
-      { path: "images/ducting/industrial-plant-exhaust-ducting.jpeg", title: "Industrial Plant Exhaust Ducting", featured: true },
-      { path: "images/ducting/machine-overhead-ducting-system.jpeg", title: "Machine Overhead Ducting System", featured: true },
-      { path: "images/ducting/textile-machinery-duct-installation.jpeg", title: "Textile Machinery Duct Work", featured: true },
-      { path: "images/ducting/processing-line-ducting-chimneys.jpeg", title: "Processing Line Ducting & Chimneys", featured: true },
-      { path: "images/ducting/factory-chimney-duct-work.jpeg", title: "Factory Chimney Duct Work", featured: true },
-      { path: "images/main-photos/ducting-chimneys.jpeg", title: "Ducting Chimneys", featured: true },
-      { path: "images/main-photos/hood-work.jpeg", title: "Hood Work", featured: true },
+      { path: "images/ducting/continuous-plant-machine-erection-and-ducting-system.jpeg", title: "Continuous Plant Machine Erection & Ducting System", featured: true },
+      { path: "images/ducting/machinery-erection-and-exhaust-ducting-system.jpeg", title: "Machinery Erection & Exhaust Ducting System", featured: true },
+      { path: "images/ducting/machinery-erection-and-ducting.jpeg", title: "Machinery Erection & Ducting", featured: true },
+      { path: "images/ducting/textile-machinery-erection-and-duct-work.jpeg", title: "Textile Machinery Erection & Duct Work", featured: true },
+      { path: "images/ducting/singeing-machine-erection-and-duct-work.jpeg", title: "Singeing Machine Erection & Duct Work", featured: true },
+      { path: "images/ducting/machinery-erection-and-duct-work.jpeg", title: "Machinery Erection & Duct Work", featured: true },
+      { path: "images/main-photos/machinery-erection-and-duct-works.jpeg", title: "Machinery Erection & Duct Works", featured: true },
+      { path: "images/main-photos/aluminium-hood-works.jpeg", title: "Aluminium Hood Works", featured: true },
       { path: "images/ducting/ducting-chimney-system.jpeg", title: "Ducting Chimney System" },
       { path: "images/ducting/industrial-ducting-system.jpeg", title: "Industrial Ducting System" },
-      { path: "images/ducting/ducting-cover-side.jpeg", title: "Ducting Cover Side" },
+      { path: "images/ducting/hood-assembly-and-erection-work.jpeg", title: "Hood Assembly & Erection Work" },
       { path: "images/ducting/heavy-exhaust-ducting.jpg", title: "Heavy Exhaust Ducting" },
-      { path: "images/ducting/metal-ducting-cover-2.jpeg", title: "Metal Ducting Cover" },
-      { path: "images/ducting/ss-double-show-box-2.jpeg", title: "SS Double Show Box" },
-      { path: "images/ducting/ss-double-show-box.jpeg", title: "SS Double Show Box" },
+      { path: "images/ducting/hood-assembly-and-erection-works.jpeg", title: "Hood Assembly & Erection Works" },
+      { path: "images/ducting/ss-double-show-box-hopper-2.jpeg", title: "SS Double Show Box Hopper" },
+      { path: "images/ducting/ss-double-show-box-hopper.jpeg", title: "SS Double Show Box Hopper" },
       { path: "images/ducting/triangular-ducting-hood-1.jpeg", title: "Triangular Ducting Hood" }
     ],
     tanks: [
-      { path: "images/main-photos/heavy-tank.jpg", title: "Heavy Tank", featured: true },
-      { path: "images/main-photos/softner-tank.jpeg", title: "Softner Tank", featured: true },
+      { path: "images/main-photos/ss-heavy-tank-works.jpg", title: "SS Heavy Tank Works", featured: true },
+      { path: "images/main-photos/ss-softner-tank.jpeg", title: "SS Softner Tank", featured: true },
       { path: "images/tanks/boiler-tank.jpeg", title: "Boiler Tank" },
       { path: "images/tanks/heavy-duty-water-tank.jpeg", title: "Heavy Duty Water Tank" },
       { path: "images/tanks/horizontal-cylindrical-tank.jpeg", title: "Horizontal Cylindrical Tank" },
@@ -257,35 +257,32 @@ document.addEventListener('DOMContentLoaded', () => {
       { path: "images/tanks/stainless-steel-mixing-tank.jpeg", title: "Stainless Steel Mixing Tank" }
     ],
     trolleys: [
-      { path: "images/main-photos/steel-trolley.jpeg", title: "Steel Trolley", featured: true },
+      { path: "images/main-photos/ms-trolley-works.jpeg", title: "MS Trolley Works", featured: true },
       { path: "images/trolleys/blue-trolley-frames-2.jpeg", title: "Blue Trolley Frames" },
       { path: "images/trolleys/custom-handling-trolley.jpeg", title: "Custom Handling Trolley" },
-      { path: "images/trolleys/heavy-duty-material-cart.jpeg", title: "Heavy Duty Material Cart" },
+      { path: "images/trolleys/ms-trolley-with-wheels.jpeg", title: "MS Trolley with Wheels" },
       { path: "images/trolleys/industrial-work-table.jpeg", title: "Industrial Work Table" },
       { path: "images/trolleys/laundry-box-trolley.jpeg", title: "Laundry Box Trolley" },
       { path: "images/trolleys/rolling-laundry-trolley.jpeg", title: "Rolling Laundry Trolley" },
       { path: "images/trolleys/rolling-material-trolley.jpeg", title: "Rolling Material Trolley" }
     ],
     ss_ducts: [
-      { path: "images/main-photos/rolling-machine-ss-false-ceiling.jpeg", title: "Rolling Machine SS False Ceiling", featured: true },
+      { path: "images/main-photos/printing-machine-ss-false-ceiling-work.jpeg", title: "Printing Machine SS False Ceiling Work", featured: true },
       { path: "images/main-photos/printing-machine-ss-false-ceiling.jpeg", title: "Printing Machine SS False Ceiling", featured: true },
-      { path: "images/main-photos/ss-double-show-box.jpeg", title: "SS Double Show Box", featured: true },
-      { path: "images/SS-duct-works/ducting-chimneys.jpeg", title: "Ducting Chimneys" }
+      { path: "images/main-photos/ss-double-show-box-hopper.jpeg", title: "SS Double Show Box Hopper", featured: true },
+      { path: "images/SS-duct-works/machinery-erection-and-duct-works.jpeg", title: "Machinery Erection & Duct Works" }
     ],
     fans_blowers: [
-      { path: "images/main-photos/axial-flow-fan-belt-driven.jpeg", title: "Axial Flow Fan Belt Driven" },
-      { path: "images/main-photos/centrifugal-blower-fan.jpeg", title: "Centrifugal Blower Fan" },
-      { path: "images/blowers/centrifugal-blower-fan-driven-type-coupling-type.jpeg", title: "Centrifugal Blower Coupling Type" },
-      { path: "images/fans/blue-centrifugal-fan.jpeg", title: "Blue Centrifugal Fan" },
-      { path: "images/fans/large-axial-fans.jpeg", title: "Large Axial Fans" },
-      { path: "images/fans/silver-centrifugal-fan.jpeg", title: "Silver Centrifugal Fan" }
+      { path: "images/main-photos/axial-flow-fan-belt-driven.jpeg", title: "Axial Flow Fan Belt Driven", featured: true },
+      { path: "images/main-photos/centrifugal-blower-fan.jpeg", title: "Centrifugal Blower Fan", featured: true },
+      { path: "images/blowers/centrifugal-blower-coupling-type.jpeg", title: "Centrifugal Blower Coupling Type", featured: true }
     ],
     other: [
-      { path: "images/others/gi-cable-tray-fabrication.jpeg", title: "GI Cable Tray Work", featured: true },
+      { path: "images/others/gi-cable-tray-work.jpeg", title: "GI Cable Tray Work", featured: true },
       { path: "images/others/heavy-duty-cable-tray-work.jpeg", title: "Heavy Duty Cable Tray Work", featured: true },
-      { path: "images/others/cable-tray-install.jpeg", title: "Cable Tray Installation" },
-      { path: "images/aluminium-work/hood-work.jpeg", title: "Aluminium Hood Work" },
-      { path: "images/aluminium-work/aluminium-hood-.jpeg", title: "Aluminium Hood" },
+      { path: "images/aluminium-work/aluminium-hood-works.jpeg", title: "Aluminium Hood Works", featured: true },
+      { path: "images/others/cable-tray-installation.jpeg", title: "Cable Tray Installation" },
+      { path: "images/aluminium-work/aluminium-hood.jpeg", title: "Aluminium Hood" },
       { path: "images/aluminium-work/aluminium-hood-cover.jpeg", title: "Aluminium Hood Cover" }
     ]
   };
@@ -297,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
     tanks: "Tank Vessels",
     trolleys: "Trolleys & Tables",
     ss_ducts: "SS Duct Works",
-    fans_blowers: "Fans & Blowers",
+    fans_blowers: "Industrial Blowers",
     other: "Cable Tray & Other Works"
   };
   const filterBtns = document.querySelectorAll('.filter-btn');
@@ -334,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       
       if (filterCategory === 'all') {
-        const idx1 = currentGalleryImages.findIndex(img => img.title === "Rolling Machine SS False Ceiling");
+        const idx1 = currentGalleryImages.findIndex(img => img.title === "Printing Machine SS False Ceiling Work");
         const idx2 = currentGalleryImages.findIndex(img => img.title === "Structure Work");
         if (idx1 !== -1 && idx2 !== -1) {
           const temp = currentGalleryImages[idx1];
@@ -661,7 +658,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const service = document.getElementById('serviceSelect').value;
       const details = document.getElementById('projectDetails').value.trim();
 
-      const whatsappNumber = '919095007447';
+      const whatsappNumber = '917418208984';
       const message = `Hello VKP Engineering,%0A%0AI would like to request a quote for:%0A- *Service Required:* ${encodeURIComponent(service)}%0A- *Name:* ${encodeURIComponent(name)}%0A- *Phone:* ${encodeURIComponent(phone)}%0A- *Project Details:* ${encodeURIComponent(details || 'N/A')}`;
 
       window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
