@@ -1049,42 +1049,82 @@ ul {
 }
 
 .filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: #ffffff;
-  border: 1px solid var(--border-color);
-  padding: 10px 22px;
+  border: 1.5px solid var(--border-color);
+  padding: 8px 18px;
   border-radius: 30px;
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--text-muted);
+  color: #334155;
   cursor: pointer;
-  transition: var(--transition-fast);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
-.filter-btn:hover,
+.filter-btn:hover {
+  border-color: #ff6b00;
+  color: #ff6b00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.15);
+}
+
 .filter-btn.active {
-  background: var(--primary-color);
+  background: #000080;
   color: #ffffff;
-  border-color: var(--primary-color);
+  border-color: #000080;
+  box-shadow: 0 4px 14px rgba(0, 0, 128, 0.25);
+  transform: translateY(-1px);
+}
+
+.filter-count {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 2px 7px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.07);
+  color: #475569;
+  font-weight: 800;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover .filter-count {
+  background: rgba(255, 107, 0, 0.12);
+  color: #ff6b00;
+}
+
+.filter-btn.active .filter-count {
+  background: #ff6b00;
+  color: #ffffff;
 }
 
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
+  gap: 26px;
 }
 
 .gallery-item-wrapper {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item-wrapper:hover {
+  transform: translateY(-4px);
 }
 
 .gallery-item-label {
-  color: #102c57;
+  color: #0f172a;
   font-weight: 800;
   text-align: center;
-  font-size: 1.15rem;
-  letter-spacing: 0.5px;
+  font-size: 1.1rem;
+  letter-spacing: 0.3px;
+  line-height: 1.35;
+  padding: 0 4px;
 }
 
 .gallery-card {
@@ -1092,43 +1132,68 @@ ul {
   height: 280px;
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   cursor: pointer;
+  background: #0f172a;
 }
 
 .gallery-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .gallery-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.2) 60%, transparent 100%);
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.3) 60%, transparent 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 20px;
+  padding: 22px;
   opacity: 0;
   transition: var(--transition-normal);
 }
 
+.gallery-card-title {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.gallery-zoom-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 38px;
+  height: 38px;
+  background: rgba(0, 0, 128, 0.85);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+
 .gallery-card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 .gallery-card:hover .gallery-card-overlay {
   opacity: 1;
 }
 
-.gallery-card-category {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--primary-color);
-  margin-bottom: 8px;
+.gallery-card:hover .gallery-zoom-icon {
+  opacity: 1;
+  transform: scale(1);
 }
 
 
@@ -1860,11 +1925,40 @@ ul {
 }
 
 .lightbox-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
   color: #ffffff;
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-top: 15px;
+  margin-top: 18px;
   text-align: center;
+  max-width: 90vw;
+}
+
+.lightbox-cat-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ff6b00;
+  background: rgba(255, 107, 0, 0.15);
+  border: 1px solid rgba(255, 107, 0, 0.3);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.lightbox-title-text {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+}
+
+.lightbox-counter {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  font-weight: 600;
 }
 
 .lightbox-close {

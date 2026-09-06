@@ -310,6 +310,27 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentGalleryImages = [];
   let currentImageIndex = 0;
 
+  // Update dynamic count badges on filter buttons
+  function updateFilterCounts() {
+    let totalCount = 0;
+    Object.keys(galleryData).forEach(cat => {
+      totalCount += galleryData[cat].length;
+    });
+
+    filterBtns.forEach(btn => {
+      const cat = btn.getAttribute('data-filter');
+      const count = cat === 'all' ? totalCount : (galleryData[cat] ? galleryData[cat].length : 0);
+      
+      let badge = btn.querySelector('.filter-count');
+      if (!badge) {
+        badge = document.createElement('span');
+        badge.className = 'filter-count';
+        btn.appendChild(badge);
+      }
+      badge.textContent = count;
+    });
+  }
+
   function renderGallery(filterCategory) {
     if (!dynamicGalleryGrid) return;
     
@@ -398,7 +419,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Fade in
       dynamicGalleryGrid.style.opacity = '1';
-    }, 300);
+    }, 250);
   }
 
   function openLightbox(index) {
@@ -408,9 +429,24 @@ document.addEventListener('DOMContentLoaded', () => {
     
     lightboxImg.src = item.path;
     lightboxImg.alt = item.title;
-    if (lightboxCaption) lightboxCaption.textContent = item.title;
+    if (lightboxCaption) {
+      const catName = categoryLabels[item.category] || 'Industrial Project';
+      lightboxCaption.innerHTML = `
+        <span class="lightbox-cat-badge">${catName}</span>
+        <span class="lightbox-title-text">${item.title}</span>
+        <span class="lightbox-counter">Photo ${currentImageIndex + 1} of ${currentGalleryImages.length}</span>
+      `;
+    }
     
     lightboxModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    if (lightboxModal) {
+      lightboxModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
   }
 
   function showNextImage(e) {
@@ -428,19 +464,31 @@ document.addEventListener('DOMContentLoaded', () => {
   // Bind Lightbox Controls
   if (lightboxPrev) lightboxPrev.addEventListener('click', showPrevImage);
   if (lightboxNext) lightboxNext.addEventListener('click', showNextImage);
-  
-  if (lightboxClose) {
-    lightboxClose.addEventListener('click', () => {
-      lightboxModal.classList.remove('active');
-    });
-  }
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
 
   if (lightboxModal) {
     lightboxModal.addEventListener('click', (e) => {
       if (e.target === lightboxModal) {
-        lightboxModal.classList.remove('active');
+        closeLightbox();
       }
     });
+
+    // Mobile touch swipe gestures for lightbox
+    let touchStartX = 0;
+    let touchEndX = 0;
+    lightboxModal.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightboxModal.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const swipeThreshold = 45;
+      if (touchEndX < touchStartX - swipeThreshold) {
+        showNextImage();
+      } else if (touchEndX > touchStartX + swipeThreshold) {
+        showPrevImage();
+      }
+    }, { passive: true });
   }
 
   // Filter Buttons Click Event
@@ -453,7 +501,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Initial Gallery Render
+  // Initial Filter Badges & Gallery Render
+  updateFilterCounts();
   window.galleryExpanded = false;
   const initialBtn = document.querySelector('.filter-btn.active');
   renderGallery(initialBtn ? initialBtn.getAttribute('data-filter') : 'all');
@@ -468,15 +517,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Handle Escape key globally for all modals
+  // Keyboard navigation globally for lightbox and modals
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      if (lightboxModal && lightboxModal.classList.contains('active')) {
-        lightboxModal.classList.remove('active');
+    if (lightboxModal && lightboxModal.classList.contains('active')) {
+      if (e.key === 'ArrowRight') {
+        showNextImage();
+      } else if (e.key === 'ArrowLeft') {
+        showPrevImage();
+      } else if (e.key === 'Escape') {
+        closeLightbox();
       }
+    }
+    if (e.key === 'Escape') {
       const quoteModalEl = document.getElementById('quoteModal');
       if (quoteModalEl && quoteModalEl.classList.contains('active')) {
         quoteModalEl.classList.remove('active');
+        document.body.style.overflow = '';
       }
     }
   });
@@ -621,30 +677,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeQuoteBtn = document.getElementById('closeQuoteModal');
   const quoteForm = document.getElementById('quoteForm');
 
+  function openQuote(predefinedService) {
+    if (predefinedService && quoteForm) {
+      const selectEl = quoteForm.querySelector('#serviceSelect');
+      if (selectEl) {
+        selectEl.value = predefinedService;
+      }
+    }
+    if (quoteModal) {
+      quoteModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeQuote() {
+    if (quoteModal) {
+      quoteModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
   openQuoteBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const predefinedService = btn.getAttribute('data-service');
-      if (predefinedService && quoteForm) {
-        const selectEl = quoteForm.querySelector('#serviceSelect');
-        if (selectEl) {
-          selectEl.value = predefinedService;
-        }
-      }
-      if (quoteModal) {
-        quoteModal.classList.add('active');
-      }
+      openQuote(predefinedService);
     });
   });
 
-  if (closeQuoteBtn && quoteModal) {
-    closeQuoteBtn.addEventListener('click', () => {
-      quoteModal.classList.remove('active');
-    });
+  if (closeQuoteBtn) closeQuoteBtn.addEventListener('click', closeQuote);
 
+  if (quoteModal) {
     quoteModal.addEventListener('click', (e) => {
       if (e.target === quoteModal) {
-        quoteModal.classList.remove('active');
+        closeQuote();
       }
     });
   }
@@ -659,15 +725,45 @@ document.addEventListener('DOMContentLoaded', () => {
       const details = document.getElementById('projectDetails').value.trim();
 
       const whatsappNumber = '917418208984';
-      const message = `Hello VKP Engineering,%0A%0AI would like to request a quote for:%0A- *Service Required:* ${encodeURIComponent(service)}%0A- *Name:* ${encodeURIComponent(name)}%0A- *Phone:* ${encodeURIComponent(phone)}%0A- *Project Details:* ${encodeURIComponent(details || 'N/A')}`;
+      const text = `*NEW PROJECT INQUIRY - VKP ENGINEERING*\n` +
+        `━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+        `👤 *Client Name:* ${name}\n` +
+        `📞 *Contact Number:* ${phone}\n` +
+        `🛠️ *Service Required:* ${service}\n` +
+        `📝 *Project Details:* ${details || 'Standard industrial quotation requested'}\n` +
+        `━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+        `🌐 *Source:* VKP Engineering Website`;
 
-      window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
-
-      if (quoteModal) {
-        quoteModal.classList.remove('active');
-      }
+      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
+      closeQuote();
       quoteForm.reset();
     });
   }
+
+  /* ==========================================================================
+     15. ACTIVE NAVIGATION LINK ON SCROLL SPY
+     ========================================================================== */
+  const navSections = document.querySelectorAll('header[id], section[id], footer[id]');
+  const navItems = document.querySelectorAll('.nav-link');
+
+  function highlightNavOnScroll() {
+    let scrollPos = window.scrollY + 140;
+    navSections.forEach(section => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      const id = section.getAttribute('id');
+      if (scrollPos >= top && scrollPos < top + height) {
+        navItems.forEach(link => {
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          } else if (link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
+            link.classList.remove('active');
+          }
+        });
+      }
+    });
+  }
+
+  window.addEventListener('scroll', highlightNavOnScroll, { passive: true });
 
 });
