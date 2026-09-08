@@ -210,49 +210,50 @@ document.addEventListener('DOMContentLoaded', () => {
      ========================================================================== */
   const galleryData = {
     structural: [
-      { path: "images/main-photos/structure-work.jpeg", title: "Structure Work", featured: true },
-      { path: "images/structural/steel-structure-fabrication.jpeg", title: "Steel Structure Fabrication", featured: true },
-      { path: "images/structural/factory-shed-setup.jpeg", title: "Factory Shed Setup", featured: true },
-      { path: "images/structural/heavy-industrial-framework.jpeg", title: "Heavy Industrial Framework" },
-      { path: "images/structural/on-site-assembly-erection.jpeg", title: "On-Site Assembly Erection" },
-      { path: "images/structural/roofing-support-structures.jpeg", title: "Roofing Support Structures" }
+      { path: "images/structural/ms-structure-works-1.jpeg", title: "MS Structure Works 1", featured: true },
+      { path: "images/structural/ms-structure-works-2.jpeg", title: "MS Structure Works 2", featured: true },
+      { path: "images/structural/ms-structure-works-3.jpeg", title: "MS Structure Works 3" },
+      { path: "images/structural/ms-structure-works-4.jpeg", title: "MS Structure Works 4" },
+      { path: "images/structural/ms-structure-works-5.jpeg", title: "MS Structure Works 5" }
     ],
     machinery: [
       { path: "images/main-photos/precision-machinery-alignment.jpeg", title: "Precision Machinery Alignment", featured: true },
-      { path: "images/machinery-erection/machinery-erection-and-electrical-works.jpeg", title: "Machinery Erection & Electrical Works", featured: true },
-      { path: "images/machinery-erection/heavy-machinery-lifting-and-positioning.jpeg", title: "Heavy Machinery Lifting & Positioning", featured: true },
+      { path: "images/main-photos/machinery-erection-and-electrical-works.jpeg", title: "Machinery Erection & Electrical Works", featured: true },
+      { path: "images/main-photos/heavy-machinery-lifting-and-positioning.jpeg", title: "Heavy Machinery Lifting & Positioning", featured: true },
       { path: "images/machinery-erection/machinery-erection-works-1.jpeg", title: "Machinery Erection Works 1" },
       { path: "images/machinery-erection/machinery-erection-works-2.jpeg", title: "Machinery Erection Works 2" },
       { path: "images/machinery-erection/machinery-erection-works-3.jpeg", title: "Machinery Erection Works 3" },
       { path: "images/machinery-erection/machinery-erection-works-4.jpeg", title: "Machinery Erection Works 4" },
       { path: "images/machinery-erection/machinery-erection-works-5.jpeg", title: "Machinery Erection Works 5" },
+      { path: "images/machinery-erection/machinery-erection-works-6.jpeg", title: "Machinery Erection Works 6" },
+      { path: "images/machinery-erection/machinery-erection-works-7.jpeg", title: "Machinery Erection Works 7" },
+      { path: "images/machinery-erection/machinery-erection-works-8.jpeg", title: "Machinery Erection Works 8" },
       { path: "images/machinery-erection/crane-lifting-machinery.jpeg", title: "Crane Lifting Machinery" },
       { path: "images/machinery-erection/heavy-machinery-installation.jpeg", title: "Heavy Machinery Installation" }
     ],
     ducting: [
-      { path: "images/ducting/continuous-plant-machine-erection-and-ducting-system.jpeg", title: "Continuous Plant Machine Erection & Ducting System", featured: true },
-      { path: "images/ducting/machinery-erection-and-exhaust-ducting-system.jpeg", title: "Machinery Erection & Exhaust Ducting System", featured: true },
-      { path: "images/ducting/machinery-erection-and-ducting.jpeg", title: "Machinery Erection & Ducting", featured: true },
-      { path: "images/ducting/textile-machinery-erection-and-duct-work.jpeg", title: "Textile Machinery Erection & Duct Work", featured: true },
-      { path: "images/ducting/singeing-machine-erection-and-duct-work.jpeg", title: "Singeing Machine Erection & Duct Work", featured: true },
-      { path: "images/ducting/machinery-erection-and-duct-work.jpeg", title: "Machinery Erection & Duct Work", featured: true },
+      { path: "images/main-photos/continuous-plant-machine-erection-and-ducting-system.jpeg", title: "Continuous Plant Machine Erection & Ducting System", featured: true },
+      { path: "images/main-photos/machinery-erection-and-exhaust-ducting-system.jpeg", title: "Machinery Erection & Exhaust Ducting System", featured: true },
+      { path: "images/main-photos/machinery-erection-and-ducting.jpeg", title: "Machinery Erection & Ducting", featured: true },
+      { path: "images/main-photos/textile-machinery-erection-and-duct-work.jpeg", title: "Textile Machinery Erection & Duct Work", featured: true },
+      { path: "images/main-photos/singeing-machine-erection-and-duct-work.jpeg", title: "Singeing Machine Erection & Duct Work", featured: true },
+      { path: "images/main-photos/machinery-erection-and-duct-work.jpeg", title: "Machinery Erection & Duct Work", featured: true },
       { path: "images/main-photos/machinery-erection-and-duct-works.jpeg", title: "Machinery Erection & Duct Works", featured: true },
-      { path: "images/ducting/printing-machine-ss-false-ceiling-work.jpeg", title: "Printing Machine SS False Ceiling Work", featured: true },
-      { path: "images/ducting/ss-double-show-box-hopper-2.jpeg", title: "SS Double Show Box Hopper", featured: true },
-      { path: "images/aluminium-work/aluminium-hood-works.jpeg", title: "Aluminium Hood Works", featured: true },
-      { path: "images/ducting/ss-printing-machine-false-ceiling.jpeg", title: "SS Printing Machine False Ceiling" },
-      { path: "images/ducting/ducting-chimney-system.jpeg", title: "Ducting Chimney System" },
+      { path: "images/main-photos/printing-machine-ss-false-ceiling-work.jpeg", title: "Printing Machine SS False Ceiling Work", featured: true },
+      { path: "images/main-photos/ss-double-show-box-hopper-2.jpeg", title: "SS Double Show Box Hopper", featured: true },
+      { path: "images/main-photos/aluminium-hood-works.jpeg", title: "Aluminium Hood Works", featured: true },
+      { path: "images/ducting/printing-machine-ss-false-ceiling.jpeg", title: "Printing Machine SS False Ceiling" },
+      { path: "images/ducting/aluminium-hood-works.jpeg", title: "Aluminium Hood Works" },
       { path: "images/ducting/industrial-ducting-system.jpeg", title: "Industrial Ducting System" },
       { path: "images/ducting/hood-assembly-and-erection-work.jpeg", title: "Hood Assembly & Erection Work" },
       { path: "images/ducting/heavy-exhaust-ducting.jpg", title: "Heavy Exhaust Ducting" },
       { path: "images/ducting/hood-assembly-and-erection-works.jpeg", title: "Hood Assembly & Erection Works" },
-      { path: "images/ducting/ss-double-show-box-hopper.jpeg", title: "SS Double Show Box Hopper" },
-      { path: "images/ducting/triangular-ducting-hood-1.jpeg", title: "Triangular Ducting Hood" }
+      { path: "images/ducting/ss-double-show-box-hopper.jpeg", title: "SS Double Show Box Hopper" }
     ],
     tanks: [
       { path: "images/main-photos/ss-heavy-tank-works.jpg", title: "SS Heavy Tank Works", featured: true },
       { path: "images/main-photos/ss-softner-tank.jpeg", title: "SS Softener Tank", featured: true },
-      { path: "images/tanks/boiler-tank.jpeg", title: "Boiler Tank", featured: true },
+      { path: "images/main-photos/boiler-tank.jpeg", title: "Boiler Tank", featured: true },
       { path: "images/tanks/heavy-duty-water-tank.jpeg", title: "Heavy Duty Water Tank" },
       { path: "images/tanks/horizontal-cylindrical-tank.jpeg", title: "Horizontal Cylindrical Tank" },
       { path: "images/tanks/industrial-vertical-storage-tank.jpeg", title: "Industrial Vertical Storage Tank" },
@@ -261,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ],
     trolleys: [
       { path: "images/main-photos/ms-trolley-works.jpeg", title: "MS Trolley Works", featured: true },
-      { path: "images/trolleys/blue-trolley-frames-2.jpeg", title: "Blue Trolley Frames", featured: true },
+      { path: "images/main-photos/blue-trolley-frames-2.jpeg", title: "Blue Trolley Frames", featured: true },
       { path: "images/trolleys/ss-truff-material-trolley.jpeg", title: "SS Truff Material Handling Trolley" },
       { path: "images/trolleys/custom-handling-trolley.jpeg", title: "Custom Handling Trolley" },
       { path: "images/trolleys/ms-trolley-with-wheels.jpeg", title: "MS Trolley with Wheels" },
@@ -271,22 +272,24 @@ document.addEventListener('DOMContentLoaded', () => {
       { path: "images/trolleys/rolling-material-trolley.jpeg", title: "Rolling Material Trolley" }
     ],
     ss_truff: [
-      { path: "images/ss-truff-works/ss-heavy-duty-truff-boxes.jpeg", title: "Heavy-Duty SS Truff Boxes", featured: true },
-      { path: "images/ss-truff-works/ss-double-shoe-box-hopper.jpeg", title: "SS Double Show Box Hopper", featured: true },
+      { path: "images/main-photos/ss-heavy-duty-truff-boxes.jpeg", title: "Heavy-Duty SS Truff Boxes", featured: true },
+      { path: "images/main-photos/ss-double-shoe-box-hopper.jpeg", title: "SS Double Show Box Hopper", featured: true },
       { path: "images/ss-truff-works/ss-truff-box-trolley.jpeg", title: "SS Truff Box Trolley with Wheels" },
       { path: "images/ss-truff-works/ss-truff-boxes-batch-fabrication.jpeg", title: "SS Truff Boxes Batch Fabrication" },
       { path: "images/ss-truff-works/ss-truff-boxes-assembly.jpeg", title: "SS Truff Boxes Assembly" },
       { path: "images/ss-truff-works/ss-truff-material-trolley.jpeg", title: "SS Truff Material Handling Trolley" },
-      { path: "images/main-photos/printing-machine-ss-false-ceiling-work.jpeg", title: "Printing Machine SS False Ceiling Work" },
-      { path: "images/main-photos/printing-machine-ss-false-ceiling.jpeg", title: "Printing Machine SS False Ceiling" }
+      { path: "images/ss-truff-works/ss-truff-boxes-production.jpeg", title: "SS Truff Boxes Production" },
+      { path: "images/main-photos/printing-machine-ss-false-ceiling-work.jpeg", title: "Printing Machine SS False Ceiling Work" }
     ],
     other: [
-      { path: "images/others/gi-cable-tray-work.jpeg", title: "GI Cable Tray Work", featured: true },
-      { path: "images/others/heavy-duty-cable-tray-work.jpeg", title: "Heavy Duty Cable Tray Work", featured: true },
-      { path: "images/others/cable-tray-installation.jpeg", title: "Cable Tray Installation", featured: true },
-      { path: "images/aluminium-work/aluminium-hood-works.jpeg", title: "Aluminium Hood Works", featured: true },
+      { path: "images/main-photos/gi-cable-tray-work.jpeg", title: "GI Cable Tray Work", featured: true },
+      { path: "images/others/heavy-duty-cable-tray-work.jpeg", title: "Heavy Duty Cable Tray Work" },
+      { path: "images/main-photos/cable-tray-installation.jpeg", title: "Cable Tray Installation", featured: true },
       { path: "images/aluminium-work/aluminium-hood.jpeg", title: "Aluminium Hood" },
-      { path: "images/aluminium-work/aluminium-hood-cover.jpeg", title: "Aluminium Hood Cover" }
+      { path: "images/aluminium-work/aluminium-hood-cover.jpeg", title: "Aluminium Hood Cover" },
+      { path: "images/blowers/axial-flow-fan-belt-driven.jpeg", title: "Axial Flow Fan Belt Driven" },
+      { path: "images/blowers/centrifugal-blower-coupling-type.jpeg", title: "Centrifugal Blower Coupling Type" },
+      { path: "images/blowers/centrifugal-blower-fan.jpeg", title: "Centrifugal Blower Fan" }
     ]
   };
 
@@ -334,13 +337,22 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       
       if (filterCategory === 'all') {
-        const idx1 = currentGalleryImages.findIndex(img => img.title === "Printing Machine SS False Ceiling Work");
-        const idx2 = currentGalleryImages.findIndex(img => img.title === "Structure Work");
-        if (idx1 !== -1 && idx2 !== -1) {
-          const temp = currentGalleryImages[idx1];
-          currentGalleryImages[idx1] = currentGalleryImages[idx2];
-          currentGalleryImages[idx2] = temp;
-        }
+        const top4Titles = [
+          "Heavy Machinery Lifting & Positioning",
+          "Continuous Plant Machine Erection & Ducting System",
+          "Machinery Erection & Exhaust Ducting System",
+          "Machinery Erection & Ducting"
+        ];
+        
+        const top4Items = [];
+        top4Titles.forEach(title => {
+          const idx = currentGalleryImages.findIndex(img => img.title === title || img.path.includes(title.toLowerCase().replace(/[^a-z0-9]+/g, '-')));
+          if (idx !== -1) {
+            top4Items.push(currentGalleryImages.splice(idx, 1)[0]);
+          }
+        });
+        
+        currentGalleryImages.unshift(...top4Items);
       }
       
       let imagesToRender = [];
