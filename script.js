@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const galleryData = {
     structural: [
       { path: "images/main-photos/structure-work.jpeg", title: "Structure Work", featured: true },
-      { path: "images/structural/ms-structural-steel-and-ss-gi-duct-fabrication.jpeg", title: "MS Structural Steel & SS/GI Duct Fabrication", featured: true },
+      { path: "images/structural/steel-structure-fabrication.jpeg", title: "Steel Structure Fabrication", featured: true },
       { path: "images/structural/factory-shed-setup.jpeg", title: "Factory Shed Setup", featured: true },
       { path: "images/structural/heavy-industrial-framework.jpeg", title: "Heavy Industrial Framework" },
       { path: "images/structural/on-site-assembly-erection.jpeg", title: "On-Site Assembly Erection" },
@@ -237,15 +237,16 @@ document.addEventListener('DOMContentLoaded', () => {
       { path: "images/ducting/singeing-machine-erection-and-duct-work.jpeg", title: "Singeing Machine Erection & Duct Work", featured: true },
       { path: "images/ducting/machinery-erection-and-duct-work.jpeg", title: "Machinery Erection & Duct Work", featured: true },
       { path: "images/main-photos/machinery-erection-and-duct-works.jpeg", title: "Machinery Erection & Duct Works", featured: true },
-      { path: "images/ducting/ss-rolling-machine-false-ceiling.jpeg", title: "SS Rolling Machine False Ceiling", featured: true },
-      { path: "images/ducting/ss-double-show-box-hopper-2.jpeg", title: "SS Double Shoe Box Hopper", featured: true },
+      { path: "images/ducting/printing-machine-ss-false-ceiling-work.jpeg", title: "Printing Machine SS False Ceiling Work", featured: true },
+      { path: "images/ducting/ss-double-show-box-hopper-2.jpeg", title: "SS Double Show Box Hopper", featured: true },
+      { path: "images/aluminium-work/aluminium-hood-works.jpeg", title: "Aluminium Hood Works", featured: true },
       { path: "images/ducting/ss-printing-machine-false-ceiling.jpeg", title: "SS Printing Machine False Ceiling" },
       { path: "images/ducting/ducting-chimney-system.jpeg", title: "Ducting Chimney System" },
       { path: "images/ducting/industrial-ducting-system.jpeg", title: "Industrial Ducting System" },
       { path: "images/ducting/hood-assembly-and-erection-work.jpeg", title: "Hood Assembly & Erection Work" },
       { path: "images/ducting/heavy-exhaust-ducting.jpg", title: "Heavy Exhaust Ducting" },
       { path: "images/ducting/hood-assembly-and-erection-works.jpeg", title: "Hood Assembly & Erection Works" },
-      { path: "images/ducting/ss-double-show-box-hopper.jpeg", title: "SS Double Shoe Box Suction Hood" },
+      { path: "images/ducting/ss-double-show-box-hopper.jpeg", title: "SS Double Show Box Hopper" },
       { path: "images/ducting/triangular-ducting-hood-1.jpeg", title: "Triangular Ducting Hood" }
     ],
     tanks: [
@@ -260,8 +261,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ],
     trolleys: [
       { path: "images/main-photos/ms-trolley-works.jpeg", title: "MS Trolley Works", featured: true },
-      { path: "images/trolleys/ss-truff-material-trolley.jpeg", title: "SS Truff Material Handling Trolley", featured: true },
       { path: "images/trolleys/blue-trolley-frames-2.jpeg", title: "Blue Trolley Frames", featured: true },
+      { path: "images/trolleys/ss-truff-material-trolley.jpeg", title: "SS Truff Material Handling Trolley" },
       { path: "images/trolleys/custom-handling-trolley.jpeg", title: "Custom Handling Trolley" },
       { path: "images/trolleys/ms-trolley-with-wheels.jpeg", title: "MS Trolley with Wheels" },
       { path: "images/trolleys/industrial-work-table.jpeg", title: "Industrial Work Table" },
@@ -270,10 +271,10 @@ document.addEventListener('DOMContentLoaded', () => {
       { path: "images/trolleys/rolling-material-trolley.jpeg", title: "Rolling Material Trolley" }
     ],
     ss_truff: [
-      { path: "images/ss-truff-works/ss-truff-box-trolley.jpeg", title: "SS Truff Box Trolley with Wheels", featured: true },
-      { path: "images/ss-truff-works/ss-truff-boxes-batch-fabrication.jpeg", title: "SS Truff Boxes Batch Fabrication", featured: true },
       { path: "images/ss-truff-works/ss-heavy-duty-truff-boxes.jpeg", title: "Heavy-Duty SS Truff Boxes", featured: true },
-      { path: "images/ss-truff-works/ss-double-shoe-box-hopper.jpeg", title: "SS Double Shoe Box Hopper", featured: true },
+      { path: "images/ss-truff-works/ss-double-shoe-box-hopper.jpeg", title: "SS Double Show Box Hopper", featured: true },
+      { path: "images/ss-truff-works/ss-truff-box-trolley.jpeg", title: "SS Truff Box Trolley with Wheels" },
+      { path: "images/ss-truff-works/ss-truff-boxes-batch-fabrication.jpeg", title: "SS Truff Boxes Batch Fabrication" },
       { path: "images/ss-truff-works/ss-truff-boxes-assembly.jpeg", title: "SS Truff Boxes Assembly" },
       { path: "images/ss-truff-works/ss-truff-material-trolley.jpeg", title: "SS Truff Material Handling Trolley" },
       { path: "images/main-photos/printing-machine-ss-false-ceiling-work.jpeg", title: "Printing Machine SS False Ceiling Work" },
@@ -283,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { path: "images/others/gi-cable-tray-work.jpeg", title: "GI Cable Tray Work", featured: true },
       { path: "images/others/heavy-duty-cable-tray-work.jpeg", title: "Heavy Duty Cable Tray Work", featured: true },
       { path: "images/others/cable-tray-installation.jpeg", title: "Cable Tray Installation", featured: true },
-      { path: "images/aluminium-work/aluminium-hood-works.jpeg", title: "Aluminium Hood Works" },
+      { path: "images/aluminium-work/aluminium-hood-works.jpeg", title: "Aluminium Hood Works", featured: true },
       { path: "images/aluminium-work/aluminium-hood.jpeg", title: "Aluminium Hood" },
       { path: "images/aluminium-work/aluminium-hood-cover.jpeg", title: "Aluminium Hood Cover" }
     ]
