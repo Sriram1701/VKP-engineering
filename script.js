@@ -212,6 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     structural: [
       { path: "images/main-photos/structure-work.jpeg", title: "Structure Work", featured: true },
       { path: "images/structural/ms-structural-steel-and-ss-gi-duct-fabrication.jpeg", title: "MS Structural Steel & SS/GI Duct Fabrication", featured: true },
+      { path: "images/structural/factory-shed-setup.jpeg", title: "Factory Shed Setup", featured: true },
       { path: "images/structural/heavy-industrial-framework.jpeg", title: "Heavy Industrial Framework" },
       { path: "images/structural/on-site-assembly-erection.jpeg", title: "On-Site Assembly Erection" },
       { path: "images/structural/roofing-support-structures.jpeg", title: "Roofing Support Structures" }
@@ -219,9 +220,9 @@ document.addEventListener('DOMContentLoaded', () => {
     machinery: [
       { path: "images/main-photos/precision-machinery-alignment.jpeg", title: "Precision Machinery Alignment", featured: true },
       { path: "images/machinery-erection/machinery-erection-and-electrical-works.jpeg", title: "Machinery Erection & Electrical Works", featured: true },
+      { path: "images/machinery-erection/heavy-machinery-lifting-and-positioning.jpeg", title: "Heavy Machinery Lifting & Positioning", featured: true },
       { path: "images/machinery-erection/machinery-erection-works-1.jpeg", title: "Machinery Erection Works 1" },
       { path: "images/machinery-erection/machinery-erection-works-2.jpeg", title: "Machinery Erection Works 2" },
-      { path: "images/machinery-erection/heavy-machinery-lifting-and-positioning.jpeg", title: "Heavy Machinery Lifting & Positioning" },
       { path: "images/machinery-erection/machinery-erection-works-3.jpeg", title: "Machinery Erection Works 3" },
       { path: "images/machinery-erection/machinery-erection-works-4.jpeg", title: "Machinery Erection Works 4" },
       { path: "images/machinery-erection/machinery-erection-works-5.jpeg", title: "Machinery Erection Works 5" },
@@ -236,20 +237,21 @@ document.addEventListener('DOMContentLoaded', () => {
       { path: "images/ducting/singeing-machine-erection-and-duct-work.jpeg", title: "Singeing Machine Erection & Duct Work", featured: true },
       { path: "images/ducting/machinery-erection-and-duct-work.jpeg", title: "Machinery Erection & Duct Work", featured: true },
       { path: "images/main-photos/machinery-erection-and-duct-works.jpeg", title: "Machinery Erection & Duct Works", featured: true },
-      { path: "images/main-photos/aluminium-hood-works.jpeg", title: "Aluminium Hood Works", featured: true },
+      { path: "images/ducting/ss-rolling-machine-false-ceiling.jpeg", title: "SS Rolling Machine False Ceiling", featured: true },
+      { path: "images/ducting/ss-double-show-box-hopper-2.jpeg", title: "SS Double Shoe Box Hopper", featured: true },
+      { path: "images/ducting/ss-printing-machine-false-ceiling.jpeg", title: "SS Printing Machine False Ceiling" },
       { path: "images/ducting/ducting-chimney-system.jpeg", title: "Ducting Chimney System" },
       { path: "images/ducting/industrial-ducting-system.jpeg", title: "Industrial Ducting System" },
       { path: "images/ducting/hood-assembly-and-erection-work.jpeg", title: "Hood Assembly & Erection Work" },
       { path: "images/ducting/heavy-exhaust-ducting.jpg", title: "Heavy Exhaust Ducting" },
       { path: "images/ducting/hood-assembly-and-erection-works.jpeg", title: "Hood Assembly & Erection Works" },
-      { path: "images/ducting/ss-double-show-box-hopper-2.jpeg", title: "SS Double Show Box Hopper" },
-      { path: "images/ducting/ss-double-show-box-hopper.jpeg", title: "SS Double Show Box Hopper" },
+      { path: "images/ducting/ss-double-show-box-hopper.jpeg", title: "SS Double Shoe Box Suction Hood" },
       { path: "images/ducting/triangular-ducting-hood-1.jpeg", title: "Triangular Ducting Hood" }
     ],
     tanks: [
       { path: "images/main-photos/ss-heavy-tank-works.jpg", title: "SS Heavy Tank Works", featured: true },
-      { path: "images/main-photos/ss-softner-tank.jpeg", title: "SS Softner Tank", featured: true },
-      { path: "images/tanks/boiler-tank.jpeg", title: "Boiler Tank" },
+      { path: "images/main-photos/ss-softner-tank.jpeg", title: "SS Softener Tank", featured: true },
+      { path: "images/tanks/boiler-tank.jpeg", title: "Boiler Tank", featured: true },
       { path: "images/tanks/heavy-duty-water-tank.jpeg", title: "Heavy Duty Water Tank" },
       { path: "images/tanks/horizontal-cylindrical-tank.jpeg", title: "Horizontal Cylindrical Tank" },
       { path: "images/tanks/industrial-vertical-storage-tank.jpeg", title: "Industrial Vertical Storage Tank" },
@@ -258,7 +260,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ],
     trolleys: [
       { path: "images/main-photos/ms-trolley-works.jpeg", title: "MS Trolley Works", featured: true },
-      { path: "images/trolleys/blue-trolley-frames-2.jpeg", title: "Blue Trolley Frames" },
+      { path: "images/trolleys/ss-truff-material-trolley.jpeg", title: "SS Truff Material Handling Trolley", featured: true },
+      { path: "images/trolleys/blue-trolley-frames-2.jpeg", title: "Blue Trolley Frames", featured: true },
       { path: "images/trolleys/custom-handling-trolley.jpeg", title: "Custom Handling Trolley" },
       { path: "images/trolleys/ms-trolley-with-wheels.jpeg", title: "MS Trolley with Wheels" },
       { path: "images/trolleys/industrial-work-table.jpeg", title: "Industrial Work Table" },
@@ -266,22 +269,21 @@ document.addEventListener('DOMContentLoaded', () => {
       { path: "images/trolleys/rolling-laundry-trolley.jpeg", title: "Rolling Laundry Trolley" },
       { path: "images/trolleys/rolling-material-trolley.jpeg", title: "Rolling Material Trolley" }
     ],
-    ss_ducts: [
-      { path: "images/main-photos/printing-machine-ss-false-ceiling-work.jpeg", title: "Printing Machine SS False Ceiling Work", featured: true },
-      { path: "images/main-photos/printing-machine-ss-false-ceiling.jpeg", title: "Printing Machine SS False Ceiling", featured: true },
-      { path: "images/main-photos/ss-double-show-box-hopper.jpeg", title: "SS Double Show Box Hopper", featured: true },
-      { path: "images/SS-duct-works/machinery-erection-and-duct-works.jpeg", title: "Machinery Erection & Duct Works" }
-    ],
-    fans_blowers: [
-      { path: "images/main-photos/axial-flow-fan-belt-driven.jpeg", title: "Axial Flow Fan Belt Driven", featured: true },
-      { path: "images/main-photos/centrifugal-blower-fan.jpeg", title: "Centrifugal Blower Fan", featured: true },
-      { path: "images/blowers/centrifugal-blower-coupling-type.jpeg", title: "Centrifugal Blower Coupling Type", featured: true }
+    ss_truff: [
+      { path: "images/ss-truff-works/ss-truff-box-trolley.jpeg", title: "SS Truff Box Trolley with Wheels", featured: true },
+      { path: "images/ss-truff-works/ss-truff-boxes-batch-fabrication.jpeg", title: "SS Truff Boxes Batch Fabrication", featured: true },
+      { path: "images/ss-truff-works/ss-heavy-duty-truff-boxes.jpeg", title: "Heavy-Duty SS Truff Boxes", featured: true },
+      { path: "images/ss-truff-works/ss-double-shoe-box-hopper.jpeg", title: "SS Double Shoe Box Hopper", featured: true },
+      { path: "images/ss-truff-works/ss-truff-boxes-assembly.jpeg", title: "SS Truff Boxes Assembly" },
+      { path: "images/ss-truff-works/ss-truff-material-trolley.jpeg", title: "SS Truff Material Handling Trolley" },
+      { path: "images/main-photos/printing-machine-ss-false-ceiling-work.jpeg", title: "Printing Machine SS False Ceiling Work" },
+      { path: "images/main-photos/printing-machine-ss-false-ceiling.jpeg", title: "Printing Machine SS False Ceiling" }
     ],
     other: [
       { path: "images/others/gi-cable-tray-work.jpeg", title: "GI Cable Tray Work", featured: true },
       { path: "images/others/heavy-duty-cable-tray-work.jpeg", title: "Heavy Duty Cable Tray Work", featured: true },
-      { path: "images/aluminium-work/aluminium-hood-works.jpeg", title: "Aluminium Hood Works", featured: true },
-      { path: "images/others/cable-tray-installation.jpeg", title: "Cable Tray Installation" },
+      { path: "images/others/cable-tray-installation.jpeg", title: "Cable Tray Installation", featured: true },
+      { path: "images/aluminium-work/aluminium-hood-works.jpeg", title: "Aluminium Hood Works" },
       { path: "images/aluminium-work/aluminium-hood.jpeg", title: "Aluminium Hood" },
       { path: "images/aluminium-work/aluminium-hood-cover.jpeg", title: "Aluminium Hood Cover" }
     ]
@@ -293,8 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ducting: "Ducting Systems",
     tanks: "Tank Vessels",
     trolleys: "Trolleys & Tables",
-    ss_ducts: "SS Duct Works",
-    fans_blowers: "Industrial Blowers",
+    ss_truff: "SS Truff Works",
     other: "Cable Tray & Other Works"
   };
   const filterBtns = document.querySelectorAll('.filter-btn');
@@ -310,26 +311,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentGalleryImages = [];
   let currentImageIndex = 0;
 
-  // Update dynamic count badges on filter buttons
-  function updateFilterCounts() {
-    let totalCount = 0;
-    Object.keys(galleryData).forEach(cat => {
-      totalCount += galleryData[cat].length;
-    });
-
-    filterBtns.forEach(btn => {
-      const cat = btn.getAttribute('data-filter');
-      const count = cat === 'all' ? totalCount : (galleryData[cat] ? galleryData[cat].length : 0);
-      
-      let badge = btn.querySelector('.filter-count');
-      if (!badge) {
-        badge = document.createElement('span');
-        badge.className = 'filter-count';
-        btn.appendChild(badge);
-      }
-      badge.textContent = count;
-    });
-  }
 
   function renderGallery(filterCategory) {
     if (!dynamicGalleryGrid) return;
@@ -501,8 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Initial Filter Badges & Gallery Render
-  updateFilterCounts();
+  // Initial Gallery Render
   window.galleryExpanded = false;
   const initialBtn = document.querySelector('.filter-btn.active');
   renderGallery(initialBtn ? initialBtn.getAttribute('data-filter') : 'all');
