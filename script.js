@@ -734,7 +734,37 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     15. ACTIVE NAVIGATION LINK ON SCROLL SPY
+     15. FOOTER QUICK INQUIRY FORM (WHATSAPP SUBMISSION)
+     ========================================================================== */
+  const footerQuickForm = document.getElementById('footerQuickForm');
+  if (footerQuickForm) {
+    footerQuickForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nameInput = document.getElementById('quickName');
+      const phoneInput = document.getElementById('quickPhone');
+      const detailsInput = document.getElementById('quickDetails');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const phone = phoneInput ? phoneInput.value.trim() : '';
+      const details = detailsInput ? detailsInput.value.trim() : '';
+
+      const whatsappNumber = '917418208984';
+      const text = `*NEW PROJECT INQUIRY - VKP ENGINEERING*\n` +
+        `━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+        `👤 *Client Name:* ${name}\n` +
+        `📞 *Contact Number:* ${phone}\n` +
+        `📝 *Project Details:* ${details || 'General project discussion requested'}\n` +
+        `━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+        `🌐 *Source:* VKP Engineering Website Footer`;
+
+      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
+      footerQuickForm.reset();
+    });
+  }
+
+  /* ==========================================================================
+     16. ACTIVE NAVIGATION LINK ON SCROLL SPY
      ========================================================================== */
   const navSections = document.querySelectorAll('header[id], section[id], footer[id]');
   const navItems = document.querySelectorAll('.nav-link');

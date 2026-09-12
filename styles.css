@@ -497,6 +497,11 @@ ul {
   display: none;
 }
 
+.mobile-nav-cta-item .btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
 
 /* ==========================================================================
    03. HERO SECTION & BOTTOM STATS BAR
@@ -891,6 +896,11 @@ ul {
   border-radius: 30px;
 }
 
+.about-btn-wrapper {
+  text-align: center;
+  margin-top: 28px;
+}
+
 
 /* ==========================================================================
    06. COMPLETE SERVICE CATEGORIES GRID
@@ -960,6 +970,10 @@ ul {
 .category-list li i {
   color: var(--primary-color-hover);
   font-size: 0.85rem;
+}
+
+.category-card .btn {
+  width: 100%;
 }
 
 
@@ -1034,6 +1048,20 @@ ul {
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 20px;
+}
+
+.core-services-header {
+  margin-bottom: 50px;
+}
+
+.core-services-heading {
+  margin-top: 15px;
+}
+
+.service-feature-content .btn-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 
@@ -1175,6 +1203,24 @@ ul {
   transform: scale(1);
 }
 
+#dynamicGalleryGrid {
+  transition: opacity 0.3s ease;
+}
+
+#viewAllPhotosContainer {
+  margin-top: 50px;
+  text-align: center;
+}
+
+#viewAllPhotosBtn {
+  display: none;
+  padding: 16px 45px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(234, 179, 8, 0.4);
+}
+
 
 /* ==========================================================================
    09. WHY CHOOSE US SECTION
@@ -1217,6 +1263,15 @@ ul {
   color: var(--text-dark);
   font-size: 0.95rem;
   line-height: 1.6;
+}
+
+.section-tag-gold {
+  background: rgba(234, 179, 8, 0.2);
+  color: var(--primary-gold);
+}
+
+.subtitle-dim {
+  color: var(--text-dim);
 }
 
 
@@ -1335,6 +1390,12 @@ ul {
 }
 
 
+.customer-subtitle {
+  max-width: 900px;
+  margin: 0 auto 30px;
+}
+
+
 /* ==========================================================================
    11. CLIENT REVIEWS & FEEDBACK (GOOGLE REVIEWS SLIDER)
    ========================================================================== */
@@ -1412,6 +1473,41 @@ ul {
 .slider-dot.active {
   background: var(--primary-color);
   transform: scale(1.2);
+}
+
+.review-slider-container {
+  max-width: 800px;
+  margin: 40px auto 0;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.review-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.google-review-btn-wrap {
+  margin-top: 30px;
+}
+
+.google-review-btn {
+  padding: 14px 30px;
+  font-size: 1.05rem;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(234, 179, 8, 0.4);
+}
+
+.google-icon {
+  margin-right: 8px;
 }
 
 
@@ -1653,6 +1749,53 @@ ul {
 
 .developer-credit a:hover {
   color: #ffffff;
+}
+
+.contact-tag {
+  background: rgba(234, 179, 8, 0.15);
+  color: var(--primary-gold);
+}
+
+.contact-gst-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.contact-gst-row .contact-label {
+  margin-bottom: 0;
+}
+
+.contact-gst-row .gst-badge {
+  margin-top: 0;
+}
+
+.contact-card-desc {
+  color: #ffffff;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+.form-control-dark {
+  background: var(--dark-bg);
+  color: #ffffff;
+  border-color: var(--border-dark);
+}
+
+.form-control-dark:focus {
+  background: var(--dark-bg);
+  color: #ffffff;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.map-iframe {
+  border: 0;
+  border-radius: 10px;
+  width: 100%;
 }
 
 
@@ -1994,6 +2137,15 @@ ul {
 
 .lightbox-next {
   right: 20px;
+}
+
+.text-gold {
+  color: var(--primary-gold);
+}
+
+.modal-submit-btn {
+  width: 100%;
+  padding: 14px;
 }
 
 
